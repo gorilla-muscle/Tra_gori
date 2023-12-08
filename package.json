@@ -9,5 +9,6 @@
   },
   "scripts": {
     "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
-  }
+  },
+  "packageManager": "yarn@1.22.21"
 }
