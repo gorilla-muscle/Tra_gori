@@ -11,8 +11,11 @@ module.exports = {
   ],
   daisyui: {
     themes: [
-      'light', // ここに使用するテーマを指定
-      // ... 他のテーマ ...
+      {
+        mytheme: {
+          "base-100": "#fffec2",
+        },
+      },
     ],
     darkMode: false, // ダークモードの自動適用を無効化
   }
