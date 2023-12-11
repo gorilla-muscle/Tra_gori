@@ -11,17 +11,20 @@
 
   <!-- リンク部分 -->
   <div class="flex items-center space-x-6 md:mx-6 text-black">
-    <%= link_to "#", class:'mx-2 hidden md:flex md:flex-col' do %>
+    <%= link_to "#", class: 'mx-2 hidden md:flex md:flex-col' do %>
       <p class="text-sm font-semibold">ホーム</p>
     <% end %>
-    <%= link_to "#", class:'mx-2 hidden md:flex md:flex-col' do %>
+    <%= link_to "#", class: 'mx-2 hidden md:flex md:flex-col' do %>
       <p class="text-sm font-semibold">ゴリガチャ</p>
     <% end %>
-    <%= link_to "#", class:'mx-2 hidden md:flex md:flex-col' do %>
+    <%= link_to "#", class: 'mx-2 hidden md:flex md:flex-col' do %>
       <p class="text-sm font-semibold">ゴリアルバム</p>
     <% end %>
-    <%= link_to "#", class:'mx-2 hidden md:flex md:flex-col' do %>
+    <%= link_to "#", class: 'mx-2 hidden md:flex md:flex-col' do %>
       <p class="text-sm font-semibold">プロフィール</p>
+    <% end %>
+    <%= link_to logout_path, data: { turbo_method: :delete }, class: 'mx-2 hidden md:flex md:flex-col' do %>
+      <p class="text-sm font-semibold">ログアウト</p>
     <% end %>
 
     <nav class="md:hidden">
@@ -31,23 +34,28 @@
         </summary>
         <ul class="dropdown-content z-[1] menu p-2 shadow bg-customYellow2 text-black rounded-box w-56">
           <li class="hover:bg-customYellow3 hover:rounded-xl">
-            <%= link_to "#", class:'flex items-center mx-2' do %>
+            <%= link_to "#", class: 'flex items-center mx-2' do %>
               <p class="text-sm font-semibold">ホーム</p>
             <% end %>
           </li>
           <li class="hover:bg-customYellow3 hover:rounded-xl mt-2">
-            <%= link_to "#", class:'flex items-center mx-2' do %>
+            <%= link_to "#", class: 'flex items-center mx-2' do %>
               <p class="text-sm font-semibold">ゴリガチャ</p>
             <% end %>
           </li>
           <li class="hover:bg-customYellow3 hover:rounded-xl mt-3">
-            <%= link_to "#", class:'flex items-center mx-2' do %>
+            <%= link_to "#", class: 'flex items-center mx-2' do %>
               <p class="text-sm font-semibold">ゴリアルバム</p>
             <% end %>
           </li>
           <li class="hover:bg-customYellow3 hover:rounded-xl mt-3">
-            <%= link_to "#", class:'flex items-center mx-2' do %>
+            <%= link_to "#", class: 'flex items-center mx-2' do %>
               <p class="text-sm font-semibold">プロフィール</p>
+            <% end %>
+          </li>
+          <li class="hover:bg-customYellow3 hover:rounded-xl mt-3">
+            <%= link_to logout_path, data: { turbo_method: :delete }, class: 'flex items-center mx-2' do %>
+              <p class="text-sm font-semibold">ログアウト</p>
             <% end %>
           </li>
         </ul>

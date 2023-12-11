@@ -5,10 +5,10 @@
   </div>
   <!-- リンク部分 -->
   <div class="flex items-center space-x-6 md:mx-6 text-black">
-    <%= link_to "#", class:'mx-2 hidden md:flex md:flex-col' do %>
+    <%= link_to new_user_path, class:'mx-2 hidden md:flex md:flex-col' do %>
       <p class="text-sm font-semibold">会員登録</p>
     <% end %>
-    <%= link_to "#", class:'mx-2 hidden md:flex md:flex-col' do %>
+    <%= link_to login_path, class:'mx-2 hidden md:flex md:flex-col' do %>
       <p class="text-sm font-semibold">ログイン</p>
     <% end %>
     <!-- ハンバーガーメニュー -->
@@ -19,12 +19,12 @@
         </summary>
         <ul class="dropdown-content z-[1] menu p-2 shadow bg-customYellow2 text-black rounded-box w-52">
           <li class="hover:bg-customYellow3 hover:rounded-xl">
-            <%= link_to "#", class:'flex items-center mx-3' do %>
+            <%= link_to new_user_path, class:'flex items-center mx-3' do %>
               <p class="text-sm font-semibold">会員登録</p>
             <% end %>
           </li>
           <li class="hover:bg-customYellow3 hover:rounded-xl mt-2">
-            <%= link_to "#", class:'flex items-center mx-3' do %>
+            <%= link_to login_path, class:'flex items-center mx-3' do %>
               <p class="text-sm font-semibold">ログイン</p>
             <% end %>
           </li>
