@@ -1,54 +1,56 @@
-<header class="bg-customYellow2 text-black flex items-center justify-center h-20 relative">
-  <div class="absolute left-2 md:left-6">
-    <div class="text-xl md:text-2xl font-bold">
-      <%= link_to "トレゴリ", "/" %>
-    </div>
-  </div>
-  
-  <div class="text-xl md:text-2xl font-bold">
-    <p class="text-sm font-semibold">所持バナナ数</p>
+<header class="bg-customYellow2 flex flex-row justify-between items-center h-20 relative">
+  <!-- ロゴ部分 -->
+  <div class="text-black ml-2 md:mx-6 text-xl md:text-2xl font-bold">
+    <%= link_to "トレゴリ", "/" %>
   </div>
 
-  <div class="absolute right-2 md:right-6 flex items-center space-x-6">
-    <%= link_to "#", class:'hidden md:flex md:flex-col' do %>
+  <!-- 所持バナナ数の表示部分 -->
+  <div class="absolute left-1/2 transform -translate-x-1/2">
+    <p class="text-black text-sm font-semibold">所持バナナ数</p>
+  </div>
+
+  <!-- リンク部分 -->
+  <div class="flex items-center space-x-6 md:mx-6 text-black">
+    <%= link_to "#", class:'mx-2 hidden md:flex md:flex-col' do %>
       <p class="text-sm font-semibold">ホーム</p>
     <% end %>
-    <%= link_to "#", class:'hidden md:flex md:flex-col' do %>
+    <%= link_to "#", class:'mx-2 hidden md:flex md:flex-col' do %>
       <p class="text-sm font-semibold">ゴリガチャ</p>
     <% end %>
-    <%= link_to "#", class:'hidden md:flex md:flex-col' do %>
+    <%= link_to "#", class:'mx-2 hidden md:flex md:flex-col' do %>
       <p class="text-sm font-semibold">ゴリアルバム</p>
     <% end %>
-    <%= link_to "#", class:'hidden md:flex md:flex-col' do %>
+    <%= link_to "#", class:'mx-2 hidden md:flex md:flex-col' do %>
       <p class="text-sm font-semibold">プロフィール</p>
     <% end %>
 
     <nav class="md:hidden">
-      <details class="dropdown dropdown-bottom dropdown-end">
+      <details class="dropdown dropdown-end">
         <summary class="bg-customYellow2 hover:bg-customYellow2 text-black m-1 btn border-none">
           <i class="fas fa-bars fa-2x"></i>
         </summary>
-          <ul class="dropdown-content z-[1] menu p-2 shadow bg-customYellow2 rounded-box w-52">
-            <li class="hover:bg-customYellow3 hover:rounded-xl">
-              <%= link_to "#", class:'flex items-center mx-2' do %>
-                <p class="text-sm font-semibold">ホーム</p>
-              <% end %>
-            </li>
-            <li class="hover:bg-customYellow3 hover:rounded-xl mt-2">
-              <%= link_to "#", class:'flex items-center mx-2' do %>
-                <p class="text-sm font-semibold">ゴリガチャ</p>
-              <% end %>
-            </li>
-            <li class="hover:bg-customYellow3 hover:rounded-xl mt-2">
-              <%= link_to "#", class:'flex items-center mx-2' do %>
-                <p class="text-sm font-semibold">ゴリアルバム</p>
-              <% end %>
-            </li><li class="hover:bg-customYellow3 hover:rounded-xl mt-2">
-              <%= link_to "#", class:'flex items-center mx-2' do %>
-                <p class="text-sm font-semibold">プロフィール</p>
-              <% end %>
-            </li>
-          </ul>
+        <ul class="dropdown-content z-[1] menu p-2 shadow bg-customYellow2 text-black rounded-box w-56">
+          <li class="hover:bg-customYellow3 hover:rounded-xl">
+            <%= link_to "#", class:'flex items-center mx-2' do %>
+              <p class="text-sm font-semibold">ホーム</p>
+            <% end %>
+          </li>
+          <li class="hover:bg-customYellow3 hover:rounded-xl mt-2">
+            <%= link_to "#", class:'flex items-center mx-2' do %>
+              <p class="text-sm font-semibold">ゴリガチャ</p>
+            <% end %>
+          </li>
+          <li class="hover:bg-customYellow3 hover:rounded-xl mt-3">
+            <%= link_to "#", class:'flex items-center mx-2' do %>
+              <p class="text-sm font-semibold">ゴリアルバム</p>
+            <% end %>
+          </li>
+          <li class="hover:bg-customYellow3 hover:rounded-xl mt-3">
+            <%= link_to "#", class:'flex items-center mx-2' do %>
+              <p class="text-sm font-semibold">プロフィール</p>
+            <% end %>
+          </li>
+        </ul>
       </details>
     </nav>
   </div>

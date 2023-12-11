@@ -17,7 +17,8 @@ module.exports = {
       colors: {
         customYellow1: '#fffee6',
         customYellow2: '#dbca00',
-        customYellow3: '#c7b700',
+        customYellow3: '#f7ff0f',
+        customYellow4: '#d4db00',
         customGreen1: '#639031',
         customGreen5: '#6F7D42',
         customGreen6: '#B6B486',
