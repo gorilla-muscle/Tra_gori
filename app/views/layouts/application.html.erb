@@ -8,9 +8,11 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/fc70459a87.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <%= render "shared/before_login_header" %>
     <%= yield %>
   </body>
 </html>
