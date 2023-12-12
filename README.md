@@ -89,4 +89,5 @@
 https://www.figma.com/file/x3Hcr5LObhGyKsv7WnWrwq/%E3%83%88%E3%83%AC%E3%82%B4%E3%83%AA-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=sFQjQb7fxXE0GAzl-1
 
 # ER図
-https://drive.google.com/file/d/1PG3wpkGWd67z0XuDHDpnBPgO7MQyLK8r/view?usp=sharing
+<img width="713" alt="image" src="https://github.com/SatoNozomi44/Tra_gori/assets/130850494/062a742e-d459-4a26-8ed0-f94a7fb0809d">
+
