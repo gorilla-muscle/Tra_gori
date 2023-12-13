@@ -1,7 +1,7 @@
-<header class="bg-customYellow2 flex flex-row justify-between items-center h-20 relative">
+<header class="flex flex-row justify-between items-center h-20 relative">
   <!-- ロゴ部分 -->
-  <div class="text-black ml-2 md:mx-6 text-xl md:text-2xl font-bold">
-    <%= link_to "トレゴリ", "/" %>
+  <div class="text-black ml-2 md:mx-5 text-xl md:text-2xl font-bold">
+    <%= link_to "トレゴリ", "/", class: "btn btn-ghost" %>
   </div>
 
   <!-- 所持バナナ数の表示部分 -->
@@ -10,52 +10,52 @@
   </div>
 
   <!-- リンク部分 -->
-  <div class="flex items-center space-x-6 md:mx-6 text-black">
-    <%= link_to "#", class: 'mx-2 hidden md:flex md:flex-col' do %>
+  <div class="flex items-center space-x-3 lg:mx-5 text-black">
+    <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
       <p class="text-sm font-semibold">ホーム</p>
     <% end %>
-    <%= link_to "#", class: 'mx-2 hidden md:flex md:flex-col' do %>
+    <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
       <p class="text-sm font-semibold">ゴリガチャ</p>
     <% end %>
-    <%= link_to "#", class: 'mx-2 hidden md:flex md:flex-col' do %>
+    <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
       <p class="text-sm font-semibold">ゴリアルバム</p>
     <% end %>
-    <%= link_to "#", class: 'mx-2 hidden md:flex md:flex-col' do %>
+    <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
       <p class="text-sm font-semibold">プロフィール</p>
     <% end %>
-    <%= link_to logout_path, data: { turbo_method: :delete }, class: 'mx-2 hidden md:flex md:flex-col' do %>
+    <%= link_to logout_path, data: { turbo_method: :delete }, class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
       <p class="text-sm font-semibold">ログアウト</p>
     <% end %>
-
-    <nav class="md:hidden">
+    <!-- ハンバーガーメニュー -->
+    <nav class="lg:hidden">
       <details class="dropdown dropdown-end">
-        <summary class="bg-customYellow2 hover:bg-customYellow2 text-black m-1 btn border-none">
+        <summary class="text-black m-1 btn btn-ghost">
           <i class="fas fa-bars fa-2x"></i>
         </summary>
-        <ul class="dropdown-content z-[1] menu p-2 shadow bg-customYellow2 text-black rounded-box w-56">
-          <li class="hover:bg-customYellow3 hover:rounded-xl">
-            <%= link_to "#", class: 'flex items-center mx-2' do %>
-              <p class="text-sm font-semibold">ホーム</p>
+        <ul class="bg-customYellow1 dropdown-content z-[1] menu p-2 shadow text-black rounded-box w-56">
+          <li class="hover:rounded-xl">
+            <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
+              <p class="text-sm font-semibold my-2">ホーム</p>
             <% end %>
           </li>
-          <li class="hover:bg-customYellow3 hover:rounded-xl mt-2">
-            <%= link_to "#", class: 'flex items-center mx-2' do %>
-              <p class="text-sm font-semibold">ゴリガチャ</p>
+          <li class="hover:rounded-xl">
+            <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
+              <p class="text-sm font-semibold my-2">ゴリガチャ</p>
             <% end %>
           </li>
-          <li class="hover:bg-customYellow3 hover:rounded-xl mt-3">
-            <%= link_to "#", class: 'flex items-center mx-2' do %>
-              <p class="text-sm font-semibold">ゴリアルバム</p>
+          <li class="hover:rounded-xl">
+            <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
+              <p class="text-sm font-semibold my-2">ゴリアルバム</p>
             <% end %>
           </li>
-          <li class="hover:bg-customYellow3 hover:rounded-xl mt-3">
-            <%= link_to "#", class: 'flex items-center mx-2' do %>
-              <p class="text-sm font-semibold">プロフィール</p>
+          <li class="hover:rounded-xl">
+            <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
+              <p class="text-sm font-semibold my-2">プロフィール</p>
             <% end %>
           </li>
-          <li class="hover:bg-customYellow3 hover:rounded-xl mt-3">
-            <%= link_to logout_path, data: { turbo_method: :delete }, class: 'flex items-center mx-2' do %>
-              <p class="text-sm font-semibold">ログアウト</p>
+          <li class="hover:rounded-xl">
+            <%= link_to logout_path, data: { turbo_method: :delete }, class: 'btn btn-ghost flex items-center mx-2' do %>
+              <p class="text-sm font-semibold my-2">ログアウト</p>
             <% end %>
           </li>
         </ul>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <body>
-  <div class="bg-customYellow1 text-customGreen1 min-h-screen flex flex-col justify-center items-center">
+  <div class="text-customGreen1 min-h-screen flex flex-col justify-center items-center">
     <div class="container mx-auto px-10">
       <header class="text-center my-12">
         <h1 class="text-4xl font-bold text-gray-800">トレゴリ</h1>
@@ -26,12 +26,12 @@
           </div>
         </div>
       </section>
-      <div class="container mx-auto px-4 py-10">
-        <div class="text-center my-12">
-          <%= link_to "さっそく始める →", new_user_path, class: "px-10 py-5 bg-blue-500 text-white font-bold rounded-lg shadow-lg hover:bg-blue-600" %>
+      <div class="px-4 py-10">
+        <div class="actions text-center rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-64 mx-auto transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1">
+          <%= link_to "さっそく始める →", new_user_path, class: "text-black font-semibold" %>
         </div>
         <div class="text-center my-12">
-          <%= link_to "ログインはこちら", login_path, class: "link-hover" %>
+          <%= link_to "ログインはこちら", login_path, class: "link-hover text-black font-semibold" %>
         </div>
       </div>
     </div>
