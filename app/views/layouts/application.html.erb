@@ -12,12 +12,13 @@
   </head>
 
   <body>
-    <div class="bg-customYellow1 min-h-screen">
+    <div class="bg-customPaper min-h-screen">
     <% if logged_in? %>
       <%= render "shared/login_header" %>
     <% else %>
       <%= render "shared/before_login_header" %>
     <% end %>
+    <%= render 'shared/flash_message' %>
     <%= yield %>
   </body>
 </html>

@@ -1,11 +1,10 @@
 default: &default
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: db
-  username: postgres
+  username: tra-gori
   password: password
-
+  host: localhost
 
 development:
   <<: *default
@@ -14,7 +13,6 @@ development:
 test:
   <<: *default
   database: tra_gori_test
-
 
 production:
   <<: *default

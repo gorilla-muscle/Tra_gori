@@ -12,19 +12,19 @@
   <!-- リンク部分 -->
   <div class="flex items-center space-x-3 lg:mx-5 text-black">
     <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold">ホーム</p>
+      <p class="text-sm font-semibold"><%= t ".home" %></p>
     <% end %>
     <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold">ゴリガチャ</p>
+      <p class="text-sm font-semibold"><%= t ".gacha" %></p>
     <% end %>
     <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold">ゴリアルバム</p>
+      <p class="text-sm font-semibold"><%= t ".album" %></p>
     <% end %>
     <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold">プロフィール</p>
+      <p class="text-sm font-semibold"><%= t ".profile" %></p>
     <% end %>
     <%= link_to logout_path, data: { turbo_method: :delete }, class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold">ログアウト</p>
+      <p class="text-sm font-semibold"><%= t ".logout" %></p>
     <% end %>
     <!-- ハンバーガーメニュー -->
     <nav class="lg:hidden">
@@ -32,30 +32,30 @@
         <summary class="text-black m-1 btn btn-ghost">
           <i class="fas fa-bars fa-2x"></i>
         </summary>
-        <ul class="bg-customYellow1 dropdown-content z-[1] menu p-2 shadow text-black rounded-box w-56">
+        <ul class="bg-customPaper dropdown-content z-[1] menu p-2 shadow text-black rounded-box w-56">
           <li class="hover:rounded-xl">
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm font-semibold my-2">ホーム</p>
+              <p class="text-sm font-semibold my-2"><%= t ".home" %></p>
             <% end %>
           </li>
           <li class="hover:rounded-xl">
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm font-semibold my-2">ゴリガチャ</p>
+              <p class="text-sm font-semibold my-2"><%= t ".gacha" %></p>
             <% end %>
           </li>
           <li class="hover:rounded-xl">
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm font-semibold my-2">ゴリアルバム</p>
+              <p class="text-sm font-semibold my-2"><%= t ".album" %></p>
             <% end %>
           </li>
           <li class="hover:rounded-xl">
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm font-semibold my-2">プロフィール</p>
+              <p class="text-sm font-semibold my-2"><%= t ".profile" %></p>
             <% end %>
           </li>
           <li class="hover:rounded-xl">
             <%= link_to logout_path, data: { turbo_method: :delete }, class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm font-semibold my-2">ログアウト</p>
+              <p class="text-sm font-semibold my-2"><%= t ".logout" %></p>
             <% end %>
           </li>
         </ul>

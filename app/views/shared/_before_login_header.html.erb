@@ -6,10 +6,10 @@
   <!-- リンク部分 -->
   <div class="flex items-center space-x-3 md:mx-5 text-black">
     <%= link_to new_user_path, class:'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold">会員登録</p>
+      <p class="text-sm font-semibold"><%= t "defaults.user_register" %></p>
     <% end %>
     <%= link_to login_path, class:'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold">ログイン</p>
+      <p class="text-sm font-semibold"><%= t "defaults.user_login" %></p>
     <% end %>
     <!-- ハンバーガーメニュー -->
     <nav class="lg:hidden">
@@ -17,15 +17,15 @@
         <summary class="text-black m-1 btn btn-ghost">
           <i class="fas fa-bars fa-2x"></i>
         </summary>
-        <ul class="dropdown-content z-[1] menu p-2 shadow text-black rounded-box w-40">
+        <ul class="bg-customPaper  dropdown-content z-[1] menu p-2 shadow text-black rounded-box w-40">
           <li class="hover:rounded-xl">
             <%= link_to new_user_path, class:'btn btn-ghost flex items-center mx-3' do %>
-              <p class="text-sm font-semibold my-2">会員登録</p>
+              <p class="text-sm font-semibold my-2"><%= t "defaults.user_register" %></p>
             <% end %>
           </li>
           <li class="hover:rounded-xl mt-2">
             <%= link_to login_path, class:'btn btn-ghost flex items-center mx-3' do %>
-              <p class="text-sm font-semibold my-2">ログイン</p>
+              <p class="text-sm font-semibold my-2"><%= t "defaults.user_login" %></p>
             <% end %>
           </li>
         </ul>

@@ -15,6 +15,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        customPaper: '#f8fafb',
         customYellow1: '#fffee6',
         customYellow2: '#dbca00',
         customYellow3: '#f7ff0f',
