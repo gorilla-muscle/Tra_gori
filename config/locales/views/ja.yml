@@ -1,0 +1,24 @@
+ja:
+  defaults:
+    user_register: "ユーザー登録"
+    user_login: "ログイン"
+    login_link: "ログインはこちら"
+  users:
+    new:
+      title: "ユーザー登録"
+      register: "登録"
+      validates_name: " (2文字以上)"
+      validates_email: " (使用可能なメールアドレス)"
+      validates_password: " (英数字組み合わせて5文字以上)"
+  user_sessions:
+    new:
+      user_login: "ログイン"
+      register_link: "ユーザー登録はこちら"
+      password_reset: "パスワードリセットはこちら"
+  shared:
+    login_header:
+      home: "ホーム"
+      gacha: "ゴリガチャ"
+      album: "ゴリアルバム"
+      profile: "プロフィール"
+      logout: "ログアウト"

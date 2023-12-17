@@ -1,0 +1,28 @@
+ja:
+  default:
+    not_authenticated:
+      warning: "先にログインするウホッ"
+    authenticated:
+      warning: "既にログイン済みウホッ"
+  activerecord:
+    models:
+      user: "ユーザー"
+    attributes:
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+  users:
+    create:
+      success: "ログインしたウホッ！"
+  user_sessions:
+    create:
+      success: "ログインしたウホッ！"
+      alert: "ログイン出来なかったウホ...."
+    destroy:
+      success: "ログアウトしたウホッ！"
+  oauths:
+    callback:
+      login_success: "%{provider}アカウントでログインしたウホッ！"
+      login_failure: "%{provider}アカウントでのログインに失敗したウホ...."

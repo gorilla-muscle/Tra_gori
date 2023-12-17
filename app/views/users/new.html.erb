@@ -1,21 +1,22 @@
 <div class="text-black min-h-screen">
   <div class="container mx-auto px-5 py-8">
     <div class="rounded-xl border-0 px-10 pt-10 pb-6 sm:mx-40 md:mx-40 lg:mx-40 xl:mx-96">
-      <h2 class="text-3xl font-bold text-center py-4">ユーザー登録</h2>
+      <h2 class="text-3xl font-bold text-center py-4"><%= t "defaults.user_register" %></h2>
       <div class="flex flex-col border-t-2 border-customGreen1">
         <%= form_with model: @user, url: users_path do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
           <div class="field mx-1 my-10">
-            <%= f.label :name %><br>
+            <%= f.label :name %><span class="text-sm text-gray-600"><%= t ".validates_name" %></span><br>
             <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
 
           <div class="field mb-10">
-            <%= f.label :email %><br>
+            <%= f.label :email %><span class="text-sm text-gray-600"><%= t ".validates_email" %></span><br>
             <%= f.email_field :email, autocomplete: "email", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
 
           <div class="field mb-10">
-            <%= f.label :password %><br>
+            <%= f.label :password %><span class="text-sm text-gray-600"><%= t ".validates_password" %></span><br>
             <%= f.password_field :password, autocomplete: "new-password", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
 
@@ -24,12 +25,14 @@
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
 
-          <div class="actions text-center rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-64 mx-auto transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1">
-            <%= f.submit "登録", class: "text-black font-semibold" %>
+          <div class="flex justify-center">
+            <button type="submit" class="actions text-center rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-64 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1  active:scale-95 active:bg-customYellow4">
+              <span class="text-black font-semibold"><%= t ".register" %></span>
+            </button>
           </div>
         <% end %>
         <div class="text-center my-8">
-          <%= link_to "ログインはこちら", login_path, class: "link-hover" %>
+          <%= link_to t("defaults.login_link"), login_path, class: "link-hover" %>
         </div>
         <div class="text-center my-3">
           <%= link_to 'Login with Google', auth_at_provider_path(provider: :google), class: "link-hover" %>
