@@ -1,61 +1,61 @@
-<header class="flex flex-row justify-between items-center h-20 relative">
+<header class="bg-customBlue1 flex flex-row justify-between items-center h-20 relative">
   <!-- ロゴ部分 -->
-  <div class="text-black ml-2 md:mx-5 text-xl md:text-2xl font-bold">
-    <%= link_to "トレゴリ", "/", class: "btn btn-ghost" %>
+  <div class="text-white ml-2 md:mx-5 hover:text-blue-600 transition duration-300 text-lg font-gorilla">
+    <%= link_to "トレゴリ", "/" %>
   </div>
 
   <!-- 所持バナナ数の表示部分 -->
   <div class="absolute left-1/2 transform -translate-x-1/2">
-    <p class="text-black text-sm font-semibold">所持バナナ数</p>
+    <p class="text-white text-sm font-gorilla">所持バナナ数</p>
   </div>
 
   <!-- リンク部分 -->
-  <div class="flex items-center space-x-3 lg:mx-5 text-black">
-    <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold"><%= t ".home" %></p>
+  <div class="flex items-center space-x-3 lg:mx-5 text-white">
+    <%= link_to "#", class: 'hover:text-blue-600 transition duration-300 font-gorilla hidden lg:flex lg:flex-col px-2' do %>
+      <p class="text-sm font-gorilla"><%= t ".home" %></p>
     <% end %>
-    <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold"><%= t ".gacha" %></p>
+    <%= link_to "#", class: 'hover:text-blue-600 transition duration-300 font-gorilla hidden lg:flex lg:flex-col px-2' do %>
+      <p class="text-sm font-gorilla"><%= t ".gacha" %></p>
     <% end %>
-    <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold"><%= t ".album" %></p>
+    <%= link_to "#", class: 'hover:text-blue-600 transition duration-300 font-gorilla hidden lg:flex lg:flex-col px-2' do %>
+      <p class="text-sm font-gorilla"><%= t ".album" %></p>
     <% end %>
-    <%= link_to "#", class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold"><%= t ".profile" %></p>
+    <%= link_to "#", class: 'hover:text-blue-600 transition duration-300 font-gorilla hidden lg:flex lg:flex-col px-2' do %>
+      <p class="text-sm font-gorilla"><%= t ".profile" %></p>
     <% end %>
-    <%= link_to logout_path, data: { turbo_method: :delete }, class: 'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold"><%= t ".logout" %></p>
+    <%= link_to logout_path, data: { turbo_method: :delete }, class: 'hover:text-blue-600 transition duration-300 font-gorilla hidden lg:flex lg:flex-col px-2' do %>
+      <p class="text-sm font-gorilla"><%= t ".logout" %></p>
     <% end %>
     <!-- ハンバーガーメニュー -->
     <nav class="lg:hidden">
       <details class="dropdown dropdown-end">
-        <summary class="text-black m-1 btn btn-ghost">
+        <summary class="text-white m-1 btn btn-ghost">
           <i class="fas fa-bars fa-2x"></i>
         </summary>
-        <ul class="bg-customPaper dropdown-content z-[1] menu p-2 shadow text-black rounded-box w-56">
+        <ul class="bg-customBlue1 dropdown-content z-[1] menu p-2 my-2 shadow text-black rounded-box w-56">
           <li class="hover:rounded-xl">
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm font-semibold my-2"><%= t ".home" %></p>
+              <p class="text-white text-sm font-gorilla"><%= t ".home" %></p>
             <% end %>
           </li>
-          <li class="hover:rounded-xl">
+          <li class="hover:rounded-xl mt-2">
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm font-semibold my-2"><%= t ".gacha" %></p>
+              <p class="text-white text-sm font-gorilla"><%= t ".gacha" %></p>
             <% end %>
           </li>
-          <li class="hover:rounded-xl">
+          <li class="hover:rounded-xl mt-2">
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm font-semibold my-2"><%= t ".album" %></p>
+              <p class="text-white text-sm font-gorilla"><%= t ".album" %></p>
             <% end %>
           </li>
-          <li class="hover:rounded-xl">
+          <li class="hover:rounded-xl mt-2">
             <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm font-semibold my-2"><%= t ".profile" %></p>
+              <p class="text-white text-sm font-gorilla"><%= t ".profile" %></p>
             <% end %>
           </li>
-          <li class="hover:rounded-xl">
+          <li class="hover:rounded-xl mt-2">
             <%= link_to logout_path, data: { turbo_method: :delete }, class: 'btn btn-ghost flex items-center mx-2' do %>
-              <p class="text-sm font-semibold my-2"><%= t ".logout" %></p>
+              <p class="text-white text-sm font-gorilla"><%= t ".logout" %></p>
             <% end %>
           </li>
         </ul>
