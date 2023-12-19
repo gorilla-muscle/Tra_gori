@@ -1,31 +1,31 @@
-<header class="flex flex-row justify-between items-center h-20">
+<header class="bg-customBlue1 flex flex-row justify-between items-center h-20">
   <!-- ロゴ部分 -->
-  <div class="text-black ml-2 md:mx-5 text-xl md:text-2xl font-bold">
-    <%= link_to "トレゴリ", "/", class: "btn btn-ghost" %>
+  <div class="text-white ml-2 md:mx-5 hover:text-blue-600 transition duration-300 text-lg font-gorilla">
+    <%= link_to "トレゴリ", "/" %>
   </div>
   <!-- リンク部分 -->
-  <div class="flex items-center space-x-3 md:mx-5 text-black">
-    <%= link_to new_user_path, class:'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold"><%= t "defaults.user_register" %></p>
+  <div class="flex items-center space-x-3 lg:mx-5 text-white">
+    <%= link_to new_user_path, class:'hover:text-blue-600 transition duration-300 font-gorilla hidden lg:flex lg:flex-col px-2' do %>
+      <p class="text-sm font-gorilla"><%= t "defaults.user_register" %></p>
     <% end %>
-    <%= link_to login_path, class:'btn btn-ghost hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-semibold"><%= t "defaults.user_login" %></p>
+    <%= link_to login_path, class:'hover:text-blue-600 transition duration-300 hidden lg:flex lg:flex-col px-2' do %>
+      <p class="text-sm font-gorilla"><%= t "defaults.user_login" %></p>
     <% end %>
     <!-- ハンバーガーメニュー -->
     <nav class="lg:hidden">
       <details class="dropdown dropdown-end">
-        <summary class="text-black m-1 btn btn-ghost">
+        <summary class="text-white m-1 btn btn-ghost">
           <i class="fas fa-bars fa-2x"></i>
         </summary>
-        <ul class="bg-customPaper  dropdown-content z-[1] menu p-2 shadow text-black rounded-box w-40">
+        <ul class="bg-customBlue1 dropdown-content z-[1] menu p-2 my-2 shadow text-white rounded-box w-52">
           <li class="hover:rounded-xl">
             <%= link_to new_user_path, class:'btn btn-ghost flex items-center mx-3' do %>
-              <p class="text-sm font-semibold my-2"><%= t "defaults.user_register" %></p>
+              <p class="text-white text-sm font-gorilla"><%= t "defaults.user_register" %></p>
             <% end %>
           </li>
           <li class="hover:rounded-xl mt-2">
             <%= link_to login_path, class:'btn btn-ghost flex items-center mx-3' do %>
-              <p class="text-sm font-semibold my-2"><%= t "defaults.user_login" %></p>
+              <p class="text-white text-sm font-gorilla"><%= t "defaults.user_login" %></p>
             <% end %>
           </li>
         </ul>
