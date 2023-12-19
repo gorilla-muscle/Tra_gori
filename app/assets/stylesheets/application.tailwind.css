@@ -2,6 +2,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer base {
+  html {
+    font-family: Proxima Nova, system-ui, sans-serif;
+  }
+}
+
 .field_with_errors {
   display: contents;
 }
