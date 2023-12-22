@@ -1,35 +1,39 @@
-<header class="bg-customBlue1 flex flex-row justify-between items-center h-20">
+<header class="bg-customBlue1 flex flex-row justify-between items-center h-20 text-white font-gorilla">
   <!-- ロゴ部分 -->
-  <div class="text-white ml-2 md:mx-5 hover:text-blue-600 transition duration-300 text-lg font-gorilla">
+  <div class="ml-2 md:mx-5 hover:text-blue-600 transition duration-300 text-lg">
     <%= link_to "トレゴリ", "/" %>
   </div>
   <!-- リンク部分 -->
-  <div class="flex items-center space-x-3 lg:mx-5 text-white">
-    <%= link_to new_user_path, class:'hover:text-blue-600 transition duration-300 font-gorilla hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-gorilla"><%= t "defaults.user_register" %></p>
+  <div class="flex items-center space-x-3 lg:mx-5">
+    <%= link_to new_user_path, class:'hover:text-blue-600 transition duration-300 hidden lg:flex lg:flex-col px-2' do %>
+      <p class="text-sm"><%= t "defaults.user_register" %></p>
     <% end %>
     <%= link_to login_path, class:'hover:text-blue-600 transition duration-300 hidden lg:flex lg:flex-col px-2' do %>
-      <p class="text-sm font-gorilla"><%= t "defaults.user_login" %></p>
+      <p class="text-sm"><%= t "defaults.user_login" %></p>
     <% end %>
-    <!-- ハンバーガーメニュー -->
-    <nav class="lg:hidden">
-      <details class="dropdown dropdown-end">
-        <summary class="text-white m-1 btn btn-ghost">
+    <!-- サイドバーメニュー -->
+    <div class="drawer drawer-end lg:hidden">
+      <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <label for="my-drawer-4" class="drawer-button btn btn-ghost md:mx-5">
           <i class="fas fa-bars fa-2x"></i>
-        </summary>
-        <ul class="bg-customBlue1 dropdown-content z-[1] menu p-2 my-2 shadow text-white rounded-box w-52">
-          <li class="hover:rounded-xl">
+        </label>
+      </div>
+      <div class="drawer-side">
+        <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+        <ul class="bg-customBlue1 dropdown-content z-[1] menu p-4 w-56 min-h-full">
+          <li class="hover:rounded-xl mt-4">
             <%= link_to new_user_path, class:'btn btn-ghost flex items-center mx-3' do %>
               <p class="text-white text-sm font-gorilla"><%= t "defaults.user_register" %></p>
             <% end %>
           </li>
-          <li class="hover:rounded-xl mt-2">
+          <li class="hover:rounded-xl mt-4">
             <%= link_to login_path, class:'btn btn-ghost flex items-center mx-3' do %>
               <p class="text-white text-sm font-gorilla"><%= t "defaults.user_login" %></p>
             <% end %>
           </li>
         </ul>
-      </details>
-    </nav>
+      </div>
+    </div>
   </div>
 </header>

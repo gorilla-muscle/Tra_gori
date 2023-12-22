@@ -3,6 +3,10 @@ ja:
     user_register: "ユーザー登録"
     user_login: "ログイン"
     login_link: "ログインはこちら"
+    home: "ホーム"
+    gacha: "ゴリガチャ"
+    album: "ゴリアルバム"
+    profile: "プロフィール"
   users:
     new:
       title: "ユーザー登録"
@@ -17,8 +21,4 @@ ja:
       password_reset: "パスワードリセットはこちら"
   shared:
     login_header:
-      home: "ホーム"
-      gacha: "ゴリガチャ"
-      album: "ゴリアルバム"
-      profile: "プロフィール"
       logout: "ログアウト"

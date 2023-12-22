@@ -1,40 +1,38 @@
-<!DOCTYPE html>
 <body>
-  <div class="text-customGreen1 min-h-screen flex flex-col justify-center items-center">
+  <div class="min-h-screen flex flex-col justify-center items-center">
     <div class="container mx-auto px-10">
       <header class="text-center my-12">
-        <h1 class="text-4xl font-bold text-gray-800">トレゴリ</h1>
-        <p class="text-gray-600">毎日の運動で、特別なゴリラを手に入れよう！</p>
+        <h1 class="text-4xl">トレゴリ</h1>
+        <p class="my-5">毎日の運動で、特別なゴリラを手に入れよう！</p>
       </header>
       <section>
         <div class="grid grid-cols-1 gap-4">
           <div class="bg-white p-6 rounded-lg shadow-xl mx-3 border border-gray-500">
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">使い方①</h2>
-            <p class="text-gray-600">使い方①ついての説明。</p>
+            <h2 class="text-2xl mb-3">使い方①</h2>
+            <p>使い方①ついての説明。</p>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-xl mx-3 border border-gray-500">
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">使い方②</h2>
-            <p class="text-gray-600">使い方②ついての説明。</p>
+            <h2 class="text-2xl mb-3">使い方②</h2>
+            <p>使い方②ついての説明。</p>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-xl mx-3 border border-gray-500">
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">使い方③</h2>
-            <p class="text-gray-600">使い方③ついての説明。</p>
+            <h2 class="text-2xl mb-3">使い方③</h2>
+            <p>使い方③ついての説明。</p>
           </div>
           <div class="bg-white p-6 rounded-lg shadow-xl mx-3 border border-gray-500">
-            <h2 class="text-2xl font-bold text-gray-800 mb-3">使い方④</h2>
-            <p class="text-gray-600">使い方④ついての説明。</p>
+            <h2 class="text-2xl mb-3">使い方④</h2>
+            <p>使い方④ついての説明。</p>
           </div>
         </div>
       </section>
       <div class="px-4 py-10">
         <div class="text-center">
-          <%= link_to "さっそく始める →", new_user_path, class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-64 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 text-black font-semibold active:scale-95 active:bg-customYellow4" %>
+          <%= link_to "さっそく始める →", new_user_path, class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-64 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
         </div>
         <div class="text-center my-12">
-          <%= link_to t("defaults.login_link"), login_path, class: "link-hover text-black font-semibold" %>
+          <%= link_to t("defaults.login_link"), login_path, class: "link-hover font-semibold" %>
         </div>
       </div>
     </div>
   </div>
 </body>
-</html>
