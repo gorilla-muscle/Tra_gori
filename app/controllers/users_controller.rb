@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = t(".success")
       auto_login(@user)
-      redirect_to root_path
+      redirect_to training_records_path
     else
       render :new, status: :unprocessable_entity
     end

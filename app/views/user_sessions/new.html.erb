@@ -4,11 +4,11 @@
       <h2 class="text-3xl font-bold text-center py-4"><%= t "defaults.user_login" %></h2>
       <div class="flex flex-col border-t-2 border-customGreen1">
         <%= form_with model: @user, url: login_path do |f| %>
-          <div class="field mx-1 my-10">
+          <div class="field mx-1 my-10 text-sm md:text-base">
             <%= f.label :email %><br>
             <%= f.email_field :email, autocomplete: "email", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
-          <div class="field mb-10">
+          <div class="field mb-10 text-sm md:text-base">
             <%= f.label :password %><br>
             <%= f.password_field :password, autocomplete: "new-password", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
@@ -23,6 +23,9 @@
         </div>
         <div class="text-center my-3">
           <%= link_to t(".password_reset"), "#", class: "link-hover" %>
+        </div>
+        <div class="flex flex-col w-full my-6">
+          <div class="divider divider-neutral ">OR</div>
         </div>
         <div class="text-center my-3">
           <%= link_to 'Login with Google', auth_at_provider_path(provider: :google), class: "link-hover" %>
