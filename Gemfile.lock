@@ -242,6 +242,8 @@ GEM
       sentry-ruby (~> 5.15.0)
     sentry-ruby (5.15.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
+    simple_calendar (2.4.3)
+      rails (>= 3.0)
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
@@ -307,6 +309,7 @@ DEPENDENCIES
   selenium-webdriver
   sentry-rails (~> 5.15)
   sentry-ruby (~> 5.15)
+  simple_calendar (~> 2.4)
   sorcery
   sprockets-rails
   stimulus-rails

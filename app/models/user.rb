@@ -10,4 +10,6 @@ class User < ApplicationRecord
 
   has_many :authentications, dependent: :destroy
   accepts_nested_attributes_for :authentications
+
+  has_many :training_records
 end
