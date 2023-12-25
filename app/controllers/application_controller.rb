@@ -4,14 +4,14 @@ class ApplicationController < ActionController::Base
   private
 
   def not_authenticated
-    flash[:warning] = t(".warning")
+    flash[:warning] = t("not_authenticated.warning")
     redirect_to login_path
   end
 
   def authenticated
     if logged_in?
-      flash[:warning] = t(".warning")
-      redirect_to root_path
+      flash[:warning] = t("authenticated.warning")
+      redirect_to training_records_path
     end
   end
 end

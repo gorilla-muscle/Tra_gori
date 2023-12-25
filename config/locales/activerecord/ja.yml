@@ -1,9 +1,8 @@
 ja:
-  default:
-    not_authenticated:
-      warning: "先にログインするウホッ"
-    authenticated:
-      warning: "既にログイン済みウホッ"
+  authenticated:
+    warning: "既にログイン済みウホッ"
+  not_authenticated:
+    warning: "先にログインするウホッ"
   activerecord:
     models:
       user: "ユーザー"
