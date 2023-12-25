@@ -25,3 +25,6 @@ ja:
     callback:
       login_success: "%{provider}アカウントでログインしたウホッ！"
       login_failure: "%{provider}アカウントでのログインに失敗したウホ...."
+  training_records:
+    create:
+      reported: "本日分は報告済みウホッ"
