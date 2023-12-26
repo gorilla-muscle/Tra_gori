@@ -1,9 +1,8 @@
 ja:
-  default:
-    not_authenticated:
-      warning: "先にログインするウホッ"
-    authenticated:
-      warning: "既にログイン済みウホッ"
+  authenticated:
+    warning: "既にログイン済みウホッ"
+  not_authenticated:
+    warning: "先にログインするウホッ"
   activerecord:
     models:
       user: "ユーザー"
@@ -26,3 +25,6 @@ ja:
     callback:
       login_success: "%{provider}アカウントでログインしたウホッ！"
       login_failure: "%{provider}アカウントでのログインに失敗したウホ...."
+  training_records:
+    create:
+      reported: "本日分は報告済みウホッ"

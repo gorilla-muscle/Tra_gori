@@ -25,14 +25,16 @@
           </div>
         </div>
       </section>
-      <div class="px-4 py-10">
-        <div class="text-center">
-          <%= link_to "さっそく始める →", new_user_path, class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-64 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
+      <% unless logged_in? %>
+        <div class="px-4 py-10">
+          <div class="text-center">
+            <%= link_to "さっそく始める →", new_user_path, class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-64 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
+          </div>
+          <div class="text-center my-12">
+            <%= link_to t("defaults.login_link"), login_path, class: "link-hover font-semibold" %>
+          </div>
         </div>
-        <div class="text-center my-12">
-          <%= link_to t("defaults.login_link"), login_path, class: "link-hover font-semibold" %>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </body>
