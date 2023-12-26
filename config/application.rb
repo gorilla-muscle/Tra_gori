@@ -23,6 +23,8 @@ module TraGori
     config.i18n.default_locale = :ja
 
     config.i18n.load_path += Dir[Rails.root.join('config/locales/**/*.yml').to_s]
+
+    config.beginning_of_week = :sunday
     
     # Configuration for the application, engines, and railties goes here.
     #

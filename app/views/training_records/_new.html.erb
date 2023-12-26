@@ -1,0 +1,17 @@
+<% unless TrainingRecord.check_report?(current_user) %>
+  <%= form_with model: record, data: { turbo: false } do |f| %>
+    <div class="field mx-1 my-10 text-sm md:text-base">
+      <%= f.text_field :sport_content, class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
+    </div>
+    <%= f.hidden_field :start_time %>
+    <div class="flex justify-center">
+      <button type="submit" class="actions text-center rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-64 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1  active:scale-95 active:bg-customYellow4">
+        <span>今日の運動を報告するウホッ！</span>
+      </button>
+    </div>
+  <% end %>
+<% else %>
+  <div class="flex justify-center">
+    <button disabled class="bg-customYellow3 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 text-black py-3 px-4 mb-5 w-64 opacity-50 cursor-not-allowed">今日の運動は報告済みウホッ</button>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_15_081007) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_24_000339) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_15_081007) do
     t.index ["provider", "uid"], name: "index_authentications_on_provider_and_uid"
   end
 
+  create_table "training_records", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "sport_content"
+    t.string "bot_content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "start_time"
+    t.index ["user_id"], name: "index_training_records_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -33,4 +43,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_15_081007) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "training_records", "users"
 end
