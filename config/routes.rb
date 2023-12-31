@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root "static_pages#top"
+  get "/term", to: "static_pages#term"
+  get "/privacy", to: "static_pages#privacy"
 
   resources :users, only: %i[new create]
   get '/login', to:  'user_sessions#new'
