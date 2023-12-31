@@ -13,7 +13,7 @@ class TrainingRecordsController < ApplicationController
     else 
       @record = current_user.training_records.build(record_params)
       if @record.save
-        redirect_to training_records_path
+        redirect_to training_reports_path
       else
         redirect_to root_path
       end
