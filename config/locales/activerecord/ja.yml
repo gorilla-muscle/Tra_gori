@@ -28,3 +28,5 @@ ja:
   training_records:
     create:
       reported: "本日分は報告済みウホッ"
+  training_reports:
+    not_report: "今日の報告がまだ出来ていないウホッ"
