@@ -96,6 +96,7 @@ GEM
     dockerfile-rails (1.5.12)
       rails (>= 3.0.0)
     erubi (1.12.0)
+    event_stream_parser (1.0.0)
     factory_bot (6.4.2)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.4.2)
@@ -105,6 +106,8 @@ GEM
       base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
     faraday-net_http (3.0.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -138,6 +141,7 @@ GEM
     minitest (5.20.0)
     msgpack (1.7.2)
     multi_xml (0.6.0)
+    multipart-post (2.3.0)
     net-imap (0.4.7)
       date
       net-protocol
@@ -237,6 +241,10 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+    ruby-openai (6.3.1)
+      event_stream_parser (>= 0.3.0, < 2.0.0)
+      faraday (>= 1)
+      faraday-multipart (>= 1)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.10.0)
@@ -313,6 +321,7 @@ DEPENDENCIES
   rails (~> 7.0.6)
   rails-i18n
   rspec-rails
+  ruby-openai
   selenium-webdriver
   sentry-rails (~> 5.15)
   sentry-ruby (~> 5.15)
