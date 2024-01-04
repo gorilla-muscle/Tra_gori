@@ -3,7 +3,7 @@
     <div class="rounded-xl border-0 px-10 pt-10 pb-6 sm:mx-40 md:mx-40 lg:mx-40 xl:mx-96">
       <h2 class="text-3xl font-bold text-center py-4"><%= t "defaults.user_login" %></h2>
       <div class="flex flex-col border-t-2 border-customGreen1">
-        <%= form_with model: @user, url: login_path do |f| %>
+        <%= form_with url: login_path do |f| %>
           <div class="field mx-1 my-10 text-sm md:text-base">
             <%= f.label :email %><br>
             <%= f.email_field :email, autocomplete: "email", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
