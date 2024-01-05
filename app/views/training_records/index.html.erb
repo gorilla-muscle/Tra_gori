@@ -10,7 +10,7 @@
         <% if records.present? %>
           <% records.each do |record| %>
             <div>
-              <%= link_to '🍌', '#' %>
+              <%= link_to image_tag("callendar_banana.png", size: "80x80"), training_report_path(id: record.id) %>
             </div>
           <% end %>
         <% end %>
