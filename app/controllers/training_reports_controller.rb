@@ -7,7 +7,7 @@ class TrainingReportsController < ApplicationController
   end
 
   def show
-    @training_record = TrainingRecord.find_by(id: params[:record_id])
+    @training_record = TrainingRecord.find_by(id: params[:id])
   end
 
   private
