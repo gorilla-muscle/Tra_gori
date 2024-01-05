@@ -2,7 +2,13 @@ class TrainingReportsController < ApplicationController
   before_action :require_login
   before_action :report_conf
 
-  def index; end
+  def index
+    @training_record = TrainingRecord.find_by(id: params[:record_id])
+  end
+
+  def show
+    @training_record = TrainingRecord.find_by(id: params[:id])
+  end
 
   private
 

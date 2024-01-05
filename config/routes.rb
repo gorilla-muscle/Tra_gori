@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   get "oauth/:provider", to:  "oauths#oauth", as: :auth_at_provider
 
   resources :training_records, only: %i[index create show]
-  resources :training_reports, only: %i[index]
+  resources :training_reports, only: %i[index show]
 end

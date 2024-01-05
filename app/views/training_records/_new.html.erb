@@ -1,7 +1,8 @@
 <% unless TrainingRecord.check_report?(current_user) %>
   <%= form_with model: record, data: { turbo: false } do |f| %>
     <div class="field mx-1 my-10 text-sm md:text-base">
-      <%= f.text_field :sport_content, class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
+      <%= f.label :sport_content, 'ここに今日の運動内容を入力するウホ', class: "text-lg md:text-xl" %>
+      <%= f.text_field :sport_content, class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5 mt-3", placeholder: '例：ウォーキングを30分弱しました。' %>
     </div>
     <%= f.hidden_field :start_time %>
     <div class="flex justify-center">
@@ -15,6 +16,6 @@
     <button disabled class="bg-customYellow3 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 text-black py-3 px-4 mb-5 w-64 opacity-50 cursor-not-allowed">今日の運動は報告済みウホッ</button>
   </div>
   <div class="flex justify-center mt-5">
-    <%= link_to "今日の報告結果を確認", training_reports_path, class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
+    <%= link_to "今日の報告結果を確認", training_reports_path(record_id: @today_record.id), class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
   </div>
 <% end %>
