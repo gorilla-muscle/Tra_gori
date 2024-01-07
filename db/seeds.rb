@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Illustration.insert_all([
+  { title: 'バナナを押し付けてくるゴリラ', description: 'バナナ食うウホ？ ってか食えウホ。', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Banana_Gorilla.png' },
+  { title: 'スクワットするゴリラ', description: 'スクワット気持ちいぇぇウホォ！ 脚トレやってないゴリラなんて『あいつ』くらいウホ。', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Barbellsquats_Gorilla.png' },
+  { title: 'パン作りに挑戦中のゴリラ', description: 'パン作り難しいウホ... もうこれにバナナブッ刺せばよくねぇウホ？', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Bread_Gorilla.png' },
+  { title: '掃除をするゴリラ', description: '俺は綺麗好きだからなウホ！ ところでここ誰の部屋ウホ？', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Cleaning_Gorilla.png' },
+  { title: 'クッキー作りをするゴリラ', description: '今度ゴリ美ちゃんにクッキープレゼントするウホ！ え、「これチョコチップじゃなくて黒豆じゃないか」？うるせぇ黙ってろウホ。', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Cookie_Gorilla.png' },
+  { title: 'ゲーム中に悲惨な事が起きたゴリラ', description: 'うぉぉぉぉい母ちゃぁぁぁん！なんでゲーム機のコンセント抜いたウホォ！？掃除機かけたいならあっち使えってんだこのマッチョゴリラ！！ あ、すみません何でもないですごめんなさいウホ。', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Cry_Gorilla.png' },
+  { title: 'サイクリングするゴリラ', description: 'いやぁようやく自転車乗れるようになったウホ〜気持ちいいウホ〜。 あれ、これブレーキ付いてなくねウホ？', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Cycling_Gorilla.png' },
+  { title: 'ゲームをするゴリラ', description: 'そろそろFPS中にイライラしちゃう癖治さないとなぁウホ。コントローラー握り潰しちゃってこれで877台目ウホ。 ...あっ今の弾当たってないだろウホォォ！？？', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Game_Gorilla.png' },
+  { title: '絵を描くゴリラ', description: '最近絵を描き始めたけど、俺意外と才能あるかもウホ♪ ...線一本書く毎に筆へし折れるのは玉に瑕ウホ。', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Illuster_Gorilla.png' },
+  { title: '懸垂するゴリラ', description: 'マッチョたるもの懸垂は大事ウホ！さぁ、君もこっち来て一緒にやるウホ。 何で後退りするウホ？さぁ、早く来るウホ。 ...こっち来いやぁぁぁぁぁぁぁ！！！', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Kensui_Gorilla.png' },
+  { title: 'ポージングするゴリラ', description: 'う〜ん我ながら素晴らしい筋肉ウホ。やはりゴリラたるものマッチョでなきゃいけないウホね！ ...人間の女の子にはモテないけどウホ。', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Muscle_Gorilla.png' },
+  { title: '忍者姿のゴリラ', description: '忍者のコスプレウホ。結構似合ってるだろウホ？ えっ、「デカすぎで隠密行動出来なそう」って？ ...お前斬るウホ。', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Ninja_Gorilla.png' },
+  { title: '気になるあの子に連絡しようとするゴリラ', description: 'ゴリ美ちゃんにメッセージ送りたいけど、どうすればいいウホ？ 分からなすぎて液晶画面叩き割って、このスマホ877台目ウホ。', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/phone_Gorilla.png' },
+  { title: '海賊服のゴリラ', description: '帆を張れ錨を上げろウホ！ヨーソローウホ！ えっ、「海賊のコスプレは見てて痛々しい」って？ ...お前はこれからサメの餌になるウホ。', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Pirates_Gorilla.png' },
+  { title: 'プログラミングするアイゴリ君', description: 'プログラミング楽しいウホ〜♪ ついついキーボード叩き割っちゃうけど...まぁいいかウホ〜♪', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Programming_Gorilla.png' },
+  { title: '読書をするアイゴリ君', description: 'この『ゴリラによるゴリラのためのバナナの全て』って本面白いウホね〜♪ 今度人間の友達に貸してあげようウホ♪', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Reading_Gorilla.png' },
+  { title: 'ガチでロボットになったアイゴリ君', description: 'ワタシハ、『Mark-877 SuperAigori』。コノキタイハ877ビョウゴニジバクスルノデ、アシカラズ。', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Robo_Gorilla.png' },
+  { title: 'ランニングをするアイゴリ君', description: '毎朝ランニングしてるけど気持ちいいウホ〜♪ ...なのに体重877kgから減らないの何かのバグウホ？', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Running_Gorilla.png' },
+  { title: '睡眠中のアイゴリ君', description: 'ZZZ...（あー、褒め言葉考えるの疲れたぜぇ。明日も早起きして頑張るかぁ...）', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Sleeping_Gorilla.png' },
+  { title: '勉強中のゴリラ', description: 'やばいウホ、3日後テストなのに全く勉強してないウホ。 え〜っと、『1+1』は877だウホ。', image_url: 'https://rails-tragori.s3.ap-northeast-1.amazonaws.com/Study_Gorilla1.png' }
+])
