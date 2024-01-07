@@ -14,4 +14,9 @@ Rails.application.routes.draw do
 
   resources :training_records, only: %i[index create show]
   resources :training_reports, only: %i[index show]
+  resources :gachas, only: %i[new create] do
+    member do
+      get :result
+    end
+  end
 end

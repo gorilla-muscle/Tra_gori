@@ -14,7 +14,7 @@
     <%= link_to training_records_path, class: 'hover:text-blue-600 transition duration-300 hidden lg:flex lg:flex-col px-2' do %>
       <p class="text-sm"><%= t "defaults.home" %></p>
     <% end %>
-    <%= link_to "#", class: 'hover:text-blue-600 transition duration-300 hidden lg:flex lg:flex-col px-2' do %>
+    <%= link_to new_gacha_path, class: 'hover:text-blue-600 transition duration-300 hidden lg:flex lg:flex-col px-2' do %>
       <p class="text-sm"><%= t "defaults.gacha" %></p>
     <% end %>
     <%= link_to "#", class: 'hover:text-blue-600 transition duration-300 hidden lg:flex lg:flex-col px-2' do %>
@@ -43,7 +43,7 @@
             <% end %>
           </li>
           <li class="hover:rounded-xl mt-4">
-            <%= link_to "#", class: 'btn btn-ghost flex items-center mx-2' do %>
+            <%= link_to new_gacha_path, class: 'btn btn-ghost flex items-center mx-2' do %>
               <p class="text-sm"><%= t "defaults.gacha" %></p>
             <% end %>
           </li>
