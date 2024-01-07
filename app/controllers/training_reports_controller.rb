@@ -1,6 +1,6 @@
 class TrainingReportsController < ApplicationController
   before_action :require_login
-  before_action :report_conf
+  before_action :report_conf, only: [:index]
 
   def index
     @training_record = TrainingRecord.find_by(id: params[:record_id])
