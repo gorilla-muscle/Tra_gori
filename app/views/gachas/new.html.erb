@@ -9,7 +9,13 @@
           <div class="bg-white p-6 rounded-lg shadow-xl mx-3 border border-gray-500">
             <%= image_tag "banana.png", size: "300x300", class:"mx-auto" %>
             <div class="pt-20 text-center">
-              <%= link_to "ガチャを一回引く", "#", class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
+              <% if current_user.number_of_banana.count >= 5%>
+                <%= form_with url: gachas_path do |f| %>
+                  <%= f.submit "ガチャを一回引く", class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
+                <% end %>
+              <% else %>
+                <button disabled class="bg-customYellow3 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 text-black py-3 px-4 mb-5 w-64 opacity-50 cursor-not-allowed">バナナを5本集めるウホッ</button>
+              <% end %>
             </div>
           </div>
         </div>
