@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_06_090739) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_08_011812) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,5 +51,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_06_090739) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  create_table "users_illustrations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "illustration_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["illustration_id"], name: "index_users_illustrations_on_illustration_id"
+    t.index ["user_id", "illustration_id"], name: "index_users_illustrations_on_user_id_and_illustration_id", unique: true
+    t.index ["user_id"], name: "index_users_illustrations_on_user_id"
+  end
+
   add_foreign_key "training_records", "users"
+  add_foreign_key "users_illustrations", "illustrations"
+  add_foreign_key "users_illustrations", "users"
 end
