@@ -32,4 +32,5 @@ ja:
     not_report: "今日の報告がまだ出来ていないウホッ"
   gachas:
     create:
+      all_acquired: "イラストをコンプリート済みウホッ！"
       shortage_banana: "バナナが不足しているウホ..."
