@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :training_records, dependent: :destroy
   has_many :users_illustrations, dependent: :destroy
   has_many :illustrations, through: :users_illustrations
+  has_many :users_profiles, dependent: :destroy
   has_one :number_of_banana, dependent: :destroy
 
   validates :name, presence: true, length: { minimum: 2, maximum: 50 }

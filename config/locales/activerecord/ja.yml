@@ -21,6 +21,10 @@ ja:
       alert: "ログイン出来なかったウホ...."
     destroy:
       success: "ログアウトしたウホッ！"
+  users_profiles:
+    update:
+      success: "ユーザー情報の更新が完了したウホッ！"
+      alert: "ユーザー情報の更新が出来なかったウホ...."
   oauths:
     callback:
       login_success: "%{provider}アカウントでログインしたウホッ！"
