@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_08_013604) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_10_093643) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,8 +69,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_08_013604) do
     t.index ["user_id"], name: "index_users_illustrations_on_user_id"
   end
 
+  create_table "users_profiles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.float "target_weight"
+    t.boolean "line_notify_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_users_profiles_on_user_id"
+  end
+
   add_foreign_key "number_of_bananas", "users"
   add_foreign_key "training_records", "users"
   add_foreign_key "users_illustrations", "illustrations"
   add_foreign_key "users_illustrations", "users"
+  add_foreign_key "users_profiles", "users"
 end
