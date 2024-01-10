@@ -5,11 +5,11 @@
       <div class="flex flex-col border-t-2 border-customGreen1">
         <%= form_with url: login_path do |f| %>
           <div class="field mx-1 my-10 text-sm md:text-base">
-            <%= f.label :email %><br>
+            <%= f.label :email, User.human_attribute_name(:email) %><br>
             <%= f.email_field :email, autocomplete: "email", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
           <div class="field mb-10 text-sm md:text-base">
-            <%= f.label :password %><br>
+            <%= f.label :password, User.human_attribute_name(:password) %><br>
             <%= f.password_field :password, autocomplete: "new-password", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
           <div class="flex justify-center">

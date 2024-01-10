@@ -18,7 +18,7 @@ ja:
     new:
       user_login: "ログイン"
       register_link: "ユーザー登録はこちら"
-      password_reset: "パスワードリセットはこちら"
+      password_reset: "パスワードをお忘れの方"
   shared:
     login_header:
       logout: "ログアウト"
