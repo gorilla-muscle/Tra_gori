@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create] do
     resources :albums, only: %i[index show]
   end
+  resource :users_profiles, only: %i[show edit update]
 
   get '/login', to:  'user_sessions#new'
   post '/login', to: 'user_sessions#create'

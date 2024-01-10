@@ -7,6 +7,7 @@ ja:
     gacha: "ゴリガチャ"
     album: "ゴリアルバム"
     profile: "プロフィール"
+    edit: "プロフィール編集"
   users:
     new:
       title: "ユーザー登録"
@@ -22,3 +23,6 @@ ja:
   shared:
     login_header:
       logout: "ログアウト"
+  users_profiles:
+    edit:
+      update: "更新"
