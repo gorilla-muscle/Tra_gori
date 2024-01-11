@@ -1,0 +1,31 @@
+<div class="min-h-screen">
+  <div class="container mx-auto px-5 py-8">
+    <div class="rounded-xl border-0 px-10 pt-10 pb-6 sm:mx-40 md:mx-40 lg:mx-40 xl:mx-96">
+      <h2 class="text-3xl md:text-4xl text-center py-4"><%= t(".title") %></h2>
+      <div class="flex flex-col border-t-2 border-customGreen1">
+        <%= form_with model: @user, url: password_reset_path(@token) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <table class="mt-5 w-full table-auto border-collapse border border-gray-300">
+            <tr>
+              <th class="border border-gray-300 px-4 py-2 bg-gray-100" scope="row"><%= f.label :email, User.human_attribute_name(:email) %></th>
+              <td class="border border-gray-300 px-4 py-2"><%= @user.email %></td>
+            </tr>
+          </table>
+          <div class="field my-10 text-sm md:text-base">
+            <%= f.label :password, User.human_attribute_name(:password) %><span class="text-xs md:text-sm text-gray-500"></span><br>
+            <%= f.password_field :password, autocomplete: "new-password", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
+          </div>
+          <div class="field mb-10 text-sm md:text-base">
+            <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation) %><br>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
+          </div>
+          <div class="flex justify-center">
+            <button type="submit" class="actions text-center rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-64 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1  active:scale-95 active:bg-customYellow4">
+              <span class="text-black font-semibold"><%= t(".register") %></span>
+            </button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

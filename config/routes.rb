@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :albums, only: %i[index show]
   end
   resource :users_profiles, only: %i[show edit update]
+  resources :password_resets, only: %i[new create edit update]
 
   get '/login', to:  'user_sessions#new'
   post '/login', to: 'user_sessions#create'
@@ -22,5 +23,9 @@ Rails.application.routes.draw do
     member do
       get :result
     end
+  end
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 end

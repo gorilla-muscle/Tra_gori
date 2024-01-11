@@ -29,6 +29,12 @@ ja:
     callback:
       login_success: "%{provider}アカウントでログインしたウホッ！"
       login_failure: "%{provider}アカウントでのログインに失敗したウホ...."
+  password_resets:
+    create:
+      success: パスワードリセット用メールを送信したウホッ
+    update:
+      change_password: "パスワードの変更が完了したウホッ！"
+      not_change_password: "パスワードの変更に失敗したウホ...."
   training_records:
     create:
       reported: "本日分は報告済みウホッ"
