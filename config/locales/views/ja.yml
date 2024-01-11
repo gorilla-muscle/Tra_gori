@@ -10,19 +10,32 @@ ja:
     edit: "プロフィール編集"
   users:
     new:
-      title: "ユーザー登録"
       register: "登録"
       validates_name: " (2文字以上)"
       validates_email: " (使用可能なメールアドレス)"
       validates_password: " (英数字組み合わせて5文字以上)"
   user_sessions:
     new:
-      user_login: "ログイン"
       register_link: "ユーザー登録はこちら"
       password_reset: "パスワードをお忘れの方"
+  password_resets:
+    new:
+      transmission: "メール送信"
+    edit:
+      title: "パスワード再設定"
+      register: "再登録"
   shared:
     login_header:
       logout: "ログアウト"
   users_profiles:
     edit:
       update: "更新"
+  training_reports:
+    index:
+      title: "今日の報告結果"
+  gachas:
+    result:
+      title: "ガチャ結果"
+  albums:
+    show:
+      title: "イラスト説明"
