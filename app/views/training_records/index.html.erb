@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col justify-center items-center">
     <div class="container mx-auto px-10">
       <header class="text-center my-12">
-        <h1 class="text-4xl">ホーム</h1>
+        <h1 class="text-4xl"><%= t("defaults.home") %></h1>
       </header>
       <%= month_calendar events: @records do |date, records| %>
         <%= date.day %>
