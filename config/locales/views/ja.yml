@@ -21,6 +21,7 @@ ja:
   password_resets:
     new:
       transmission: "メール送信"
+      back_to_login: "ログイン画面へ戻る"
     edit:
       title: "パスワード再設定"
       register: "再登録"
