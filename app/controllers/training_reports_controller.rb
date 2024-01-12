@@ -1,5 +1,4 @@
 class TrainingReportsController < ApplicationController
-  before_action :require_login
   before_action :report_conf, only: [:index]
 
   def index

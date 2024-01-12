@@ -1,6 +1,4 @@
 class TrainingRecordsController < ApplicationController
-  before_action :require_login
-
   def index
     @records = user_training_records
     @record = TrainingRecord.new(start_time: Time.current)
