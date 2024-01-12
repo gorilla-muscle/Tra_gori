@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       auto_login(@user)
       redirect_to training_records_path
     else
+      flash.now[:alert] = t(".alert")
       render :new, status: :unprocessable_entity
     end
   end

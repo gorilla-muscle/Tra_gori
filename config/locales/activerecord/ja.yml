@@ -15,6 +15,7 @@ ja:
   users:
     create:
       success: "ログインしたウホッ！"
+      alert: "登録出来なかったウホ...."
   user_sessions:
     create:
       success: "ログインしたウホッ！"
