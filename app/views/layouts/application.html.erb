@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TraGori</title>
+    <title>トレゴリ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +10,10 @@
     <%= javascript_importmap_tags %>
     <script src="https://kit.fontawesome.com/fc70459a87.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500&display=swap" rel="stylesheet">
+    <%= display_meta_tags(default_meta_tags) %>
+    <%= favicon_link_tag('favicon.ico') %>
+    <link href="<%= image_path("apple-touch-icon.png") %>" rel="apple-touch-icon" sizes="180x180" type="image/png" />
+    <link href="<%= image_path("android-touch-icon.png") %>" rel="icon" sizes="192x192" type="image/png" />
   </head>
 
   <body>
