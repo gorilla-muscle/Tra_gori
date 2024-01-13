@@ -8,10 +8,16 @@ module ApplicationHelper
     end
   end
 
+  def page_title(title)
+    base_title = "トレゴリ"
+
+    title.empty? ? base_title : base_title + " | " + title
+  end
+
   def default_meta_tags
     {
       site: 'トレゴリ',
-      title: '運動習慣定着のための記録・ゲーミフィケーションサービス',
+      title: 'トレゴリ',
       reverse: true,
       charset: 'utf-8',
       description: 'トレゴリは、日々の運動内容に応じて『バナナ』と『トレゴリ君からの労いの言葉』をGET出来るサービスです。バナナを使用する事でゴリラのガチャをGETする事が出来るので、ゲーム感覚で運動の記録を行う事が出来ます。',
