@@ -8,6 +8,13 @@ ja:
     album: "ゴリアルバム"
     profile: "プロフィール"
     edit: "プロフィール編集"
+  static_pages:
+    top:
+      title: "トレゴリ"
+    term:
+      title: "利用規約"
+    privacy:
+      title: "プライバシーポリシー"
   users:
     new:
       register: "登録"

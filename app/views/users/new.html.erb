@@ -1,7 +1,8 @@
+<% content_for(:title, t('defaults.user_register')) %>
 <div class="min-h-screen">
   <div class="container mx-auto px-5 py-8">
     <div class="rounded-xl border-0 px-10 pt-10 pb-6 sm:mx-40 md:mx-40 lg:mx-40 xl:mx-96">
-      <h2 class="text-3xl md:text-4xl text-center py-4"><%= t "defaults.user_register" %></h2>
+      <h2 class="text-3xl md:text-4xl text-center py-4"><%= t("defaults.user_register") %></h2>
       <div class="flex flex-col border-t-2 border-customGreen1">
         <%= form_with model: @user, url: users_path do |f| %>
           <%= render 'shared/error_messages', object: f.object %>
