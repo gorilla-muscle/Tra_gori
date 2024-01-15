@@ -38,8 +38,8 @@
         <div class="flex flex-col w-full my-6">
           <div class="divider divider-neutral">OR</div>
         </div>
-        <div class="text-center my-3">
-          <%= link_to 'Login with Google', auth_at_provider_path(provider: :google), class: "link-hover" %>
+        <div class="text-center mt-10">
+          <%= link_to raw('<i class="fa-brands fa-google"></i> Googleアカウントでログイン'), auth_at_provider_path(provider: :google), class: "inline-block actions rounded-lg bg-customBlown1 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customBlown2 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95" %>
         </div>
       </div>
     </div>
