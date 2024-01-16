@@ -1,26 +1,24 @@
 <% content_for(:title, t('defaults.home')) %>
-<body>
-  <div class="min-h-screen flex flex-col justify-center items-center">
-    <div class="container mx-auto px-10">
-      <header class="text-center my-12">
-        <h1 class="text-4xl"><%= t("defaults.home") %></h1>
-      </header>
-      <%= month_calendar events: @records do |date, records| %>
-        <%= date.day %>
+<div class="min-h-screen flex flex-col justify-center items-center">
+  <div class="container mx-auto px-10">
+    <header class="text-center my-12">
+      <h1 class="text-4xl"><%= t("defaults.home") %></h1>
+    </header>
+    <%= month_calendar events: @records do |date, records| %>
+      <%= date.day %>
 
-        <% if records.present? %>
-          <% records.each do |record| %>
-            <div>
-              <%= link_to image_tag("callendar_banana.png", size: "80x80"), training_report_path(id: record.id) %>
-            </div>
-          <% end %>
+      <% if records.present? %>
+        <% records.each do |record| %>
+          <div>
+            <%= link_to image_tag("callendar_banana.png", size: "80x80"), training_report_path(id: record.id) %>
+          </div>
         <% end %>
       <% end %>
-      <div class="px-4 py-10">
-        <div class="text-center">
-          <%= render 'new', record: @record %>
-        </div>
+    <% end %>
+    <div class="px-4 py-10">
+      <div class="text-center">
+        <%= render 'new', record: @record %>
       </div>
     </div>
   </div>
-</body>
+</div>
