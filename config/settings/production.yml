@@ -1,0 +1,2 @@
+sorcery:
+  google_callback_url: 'http://https://tra-gori.fly.dev/oauth/callback?provider=google'
