@@ -19,13 +19,14 @@
 
   <body>
     <div class="bg-customPaper min-h-screen text-black font-gorilla">
-    <% if logged_in? %>
-      <%= render "shared/login_header" %>
-    <% else %>
-      <%= render "shared/before_login_header" %>
-    <% end %>
-    <%= render "shared/flash_message" %>
-    <%= yield %>
-    <%= render "shared/footer" %>
+      <% if logged_in? %>
+        <%= render "shared/login_header" %>
+      <% else %>
+        <%= render "shared/before_login_header" %>
+      <% end %>
+      <%= render "shared/flash_message" %>
+      <%= yield %>
+      <%= render "shared/footer" %>
+    </div>
   </body>
 </html>

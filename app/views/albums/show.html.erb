@@ -1,28 +1,26 @@
 <% content_for :title do %>
   <%= t('.title') %>《No. <%= @illustration.id %>》
 <% end %>
-<body>
-  <div class="min-h-screen flex flex-col justify-center items-center">
-    <div class="container mx-auto px-10">
-      <header class="text-center my-12">
-        <h1 class="text-4xl"><%= t(".title") %></h1>
-      </header>
-      <section>
-        <div class="grid grid-cols-1 gap-4 mb-20">
-          <div class="bg-white p-6 rounded-lg shadow-xl mx-3 border border-gray-500">
-            <%= image_tag @illustration.image_url, alt: @illustration.title, size: "800x800", class:"mx-auto" %>
-            <h2 class="text-2xl md:text-3xl mt-20 text-center">《 Gorilla No. <%= @illustration.id %> 》</h2>
-            <h2 class="text-xl md:text-2xl mt-8 text-center">『 <%= @illustration.title %> 』</h2>
-            <h2 class="text-lg md:text-xl my-20 text-center">「<%= @illustration.description %>」</h2>
-          </div>
+<div class="min-h-screen flex flex-col justify-center items-center">
+  <div class="container mx-auto px-10">
+    <header class="text-center my-12">
+      <h1 class="text-4xl"><%= t(".title") %></h1>
+    </header>
+    <section>
+      <div class="grid grid-cols-1 gap-4 mb-20">
+        <div class="bg-white p-6 rounded-lg shadow-xl mx-3 border border-gray-500">
+          <%= image_tag @illustration.image_url, alt: @illustration.title, size: "800x800", class:"mx-auto" %>
+          <h2 class="text-2xl md:text-3xl mt-20 text-center">《 Gorilla No. <%= @illustration.id %> 》</h2>
+          <h2 class="text-xl md:text-2xl mt-8 text-center">『 <%= @illustration.title %> 』</h2>
+          <h2 class="text-lg md:text-xl my-20 text-center">「<%= @illustration.description %>」</h2>
         </div>
-      </section>
-      <div class="mt-5 text-center">
-        <%= link_to "ゴリアルバムへ戻る", user_albums_path(current_user), class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
       </div>
-      <div class="mt-5 mb-10 text-center">
-        <%= link_to "ホーム画面へ戻る", training_records_path, class: "inline-block actions rounded-lg bg-gray-400 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-gray-500 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-gray-500" %>
-      </div>
+    </section>
+    <div class="mt-5 text-center">
+      <%= link_to "ゴリアルバムへ戻る", user_albums_path(current_user), class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
+    </div>
+    <div class="mt-5 mb-10 text-center">
+      <%= link_to "ホーム画面へ戻る", training_records_path, class: "inline-block actions rounded-lg bg-gray-400 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-gray-500 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-gray-500" %>
     </div>
   </div>
-</body>
+</div>

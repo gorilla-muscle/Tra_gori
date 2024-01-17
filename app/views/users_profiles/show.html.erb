@@ -1,18 +1,22 @@
 <% content_for(:title, t('defaults.profile')) %>
 <body>
   <div class="min-h-screen flex flex-col justify-center items-center">
-    <div class="container mx-auto px-10">
+    <div class="container px-10">
       <header class="text-center my-12">
         <h1 class="text-4xl"><%= t("defaults.profile") %></h1>
       </header>
       <table class="w-full table-auto border-collapse border border-gray-300">
         <tr>
-          <th class="border border-gray-300 px-4 py-2 bg-gray-100" scope="row"><%= User.human_attribute_name(:name) %></th>
-          <td class="border border-gray-300 px-4 py-2"><%= current_user.name %></td>
+          <th class="text-base md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row"><%= User.human_attribute_name(:name) %></th>
+          <td class="text-base md:text-lg border border-gray-300 py-4 text-center"><%= current_user.name %></td>
         </tr>
         <tr>
-          <th class="border border-gray-300 px-4 py-2 bg-gray-100" scope="row"><%= User.human_attribute_name(:email) %></th>
-          <td class="border border-gray-300 px-4 py-2"><%= current_user.email %></td>
+          <th class="text-base md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row"><%= User.human_attribute_name(:email) %></th>
+          <td class="text-base md:text-lg border border-gray-300 py-4 text-center"><%= current_user.email %></td>
+        </tr>
+        <tr>
+          <th class="text-base md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row">現在の総運動日数</th>
+          <td class="text-base md:text-lg border border-gray-300 py-4 text-center"><%= current_user.training_records.count %>日</td>
         </tr>
       </table>
       <div class="pt-10 text-center">

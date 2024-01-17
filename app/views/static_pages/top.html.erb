@@ -1,36 +1,63 @@
 <body>
   <div class="min-h-screen flex flex-col justify-center items-center">
     <div class="container mx-auto px-10">
-      <header class="text-center my-12">
-        <h1 class="text-4xl"><%= t(".title") %></h1>
-        <p class="my-5">毎日の運動で、特別なゴリラを手に入れよう！</p>
+      <header class="text-center my-10">
+        <%= image_tag "tragori_logo.png", size: "800x800", class: "mx-auto" %>
+        <p class="my-5 text-lg">〜 あなたの身体を健康的に。運動習慣定着のための記録・ゲーミフィケーションサービス 〜</p>
+        <p class="text-lg md:text-xl text-center mt-24">トレゴリは、日々の運動を楽しく記録する事で、皆さんの運動の習慣化を手助けするサービスです。</p>
       </header>
+      <hr class="my-24 border-t-2 border-black">
       <section>
         <div class="grid grid-cols-1 gap-4">
-          <div class="bg-white p-6 rounded-lg shadow-xl mx-3 mb-5 border border-gray-500">
-            <h2 class="text-2xl mb-3">使い方①</h2>
-            <p>使い方①ついての説明。</p>
+          <h2 class="text-2xl md:text-3xl mb-16 text-center">《 トレゴリの使い方 》</h2>
+          <div class="bg-white p-6 rounded-lg shadow-xl mx-3 mb-10 py-10 ">
+            <h1 class="text-xl md:text-2xl text-center">【 ① 運動を報告しよう！ 】</h1>
+            <%= image_tag "top_page1.png", size: "600x300", class:"mx-auto my-10 rounded-lg" %>
+            <div class="text-center text-sm md:text-lg">
+              <p class="mb-5">まずは、ホーム画面からその日の運動内容を報告しましょう。</p>
+              <p>AIゴリラのアイゴリ君から、労いの言葉とバナナがプレゼントされます。</p>
+            </div>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-xl mx-3 mb-5 border border-gray-500">
-            <h2 class="text-2xl mb-3">使い方②</h2>
-            <p>使い方②ついての説明。</p>
+          <div class="bg-white p-6 rounded-lg shadow-xl mx-3 mb-10 py-10">
+            <h1 class="text-xl md:text-2xl text-center">【 ② ガチャを引こう！ 】</h1>
+            <%= image_tag "top_page2.png", size: "600x300", class:"mx-auto my-10 rounded-lg" %>
+            <div class="text-center text-sm md:text-lg">
+              <p class="mb-5">バナナを5本集める事で、『ゴリガチャ』を1回引く事が出来ます。</p>
+              <p>ガチャ1回でゴリラのイラストを1枚GET出来るので、コンプリートを目指しましょう！</p>
+            </div>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-xl mx-3 mb-5 border border-gray-500">
-            <h2 class="text-2xl mb-3">使い方③</h2>
-            <p>使い方③ついての説明。</p>
+          <div class="bg-white p-6 rounded-lg shadow-xl mx-3 mb-10 py-10">
+            <h1 class="text-xl md:text-2xl text-center">【 ③ アルバムでイラストを確認！ 】</h1>
+            <%= image_tag "top_page3.png", size: "600x300", class:"mx-auto my-10 rounded-lg" %>
+            <div class="text-center text-sm md:text-lg">
+              <p class="mb-5">『ゴリガチャ』でGETしたイラストは、サービス内のアルバムで確認可能です。</p>
+              <p>疲れている時やストレスが溜まっている時に、アルバムを見て癒されてみてはいかかでしょう？</p>
+            </div>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-xl mx-3 mb-5 border border-gray-500">
-            <h2 class="text-2xl mb-3">使い方④</h2>
-            <p>使い方④ついての説明。</p>
+          <div class="bg-white p-6 rounded-lg shadow-xl mx-3 mb-10 py-10">
+            <h1 class="text-xl md:text-2xl text-center">【 ④ Xで共有して自慢しよう！ 】</h1>
+            <%= image_tag "top_page4.png", size: "600x300", class:"mx-auto my-10 rounded-lg" %>
+            <div class="text-center text-sm md:text-lg">
+              <p class="mb-5">アイゴリ君からの労いの言葉・『ゴリガチャ』の結果はXで共有可能です。</p>
+              <p>自分の頑張りやガチャ結果を他の人に自慢して、運動のモチベーションUPに繋げましょう！</p>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-xl mx-3 mb-10 py-10">
+            <h1 class="text-xl md:text-2xl text-center">【 その他に.... 】</h1>
+            <%= image_tag "question_mark.png", size: "350x350", class:"mx-auto my-10 rounded-lg" %>
+            <div class="text-center">
+              <p class="mb-10 text-xl md:text-2xl">イラストをコンプリートすると何かが起きる....かも？</p>
+              <p class="text-sm md:text-lg">何が起きるかは、皆さんの目で確かめて見て下さい。</p>
+            </div>
           </div>
         </div>
       </section>
       <% unless logged_in? %>
-        <div class="px-4 py-10">
+        <div class="px-4 pt-20">
           <div class="text-center">
-            <%= link_to "さっそく始める →", new_user_path, class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-64 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
+            <%= link_to "さっそく始める →", new_user_path, class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 w-64 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
           </div>
-          <div class="text-center my-12">
+          <div class="text-center mt-12 mb-20">
             <%= link_to t("defaults.login_link"), login_path, class: "link-hover font-semibold" %>
           </div>
         </div>
