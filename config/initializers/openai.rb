@@ -1,3 +1,5 @@
-OpenAI.configure do |config|
-  config.access_token = Rails.application.credentials.openai[:api_key]
+if Rails.application.credentials.openai
+  OpenAI.configure do |config|
+    config.access_token = Rails.application.credentials.openai[:api_key]
+  end
 end

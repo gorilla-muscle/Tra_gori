@@ -1,5 +1,6 @@
 <% content_for(:title, t('defaults.user_login')) %>
 <div class="text-black min-h-screen">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
   <div class="container mx-auto px-5 py-8">
     <div class="rounded-xl border-0 px-10 pt-10 pb-6 sm:mx-40 md:mx-40 lg:mx-40 xl:mx-96">
       <h2 class="text-3xl md:text-4xl font-bold text-center py-4"><%= t("defaults.user_login") %></h2>
@@ -28,8 +29,8 @@
         <div class="flex flex-col w-full my-6">
           <div class="divider divider-neutral ">OR</div>
         </div>
-        <div class="text-center my-3">
-          <%= link_to 'Login with Google', auth_at_provider_path(provider: :google), class: "link-hover" %>
+        <div class="text-center mt-10">
+          <%= link_to raw('<i class="fa-brands fa-google"></i> Googleアカウントでログイン'), auth_at_provider_path(provider: :google), class: "inline-block actions rounded-lg bg-customBlown1 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customBlown2 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95" %>
         </div>
       </div>
     </div>
