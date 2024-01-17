@@ -15,6 +15,8 @@ ja:
       title: "利用規約"
     privacy:
       title: "プライバシーポリシー"
+    contact:
+      title: "お問い合わせ"
   users:
     new:
       register: "登録"
