@@ -4,15 +4,23 @@
     <div class="rounded-xl border-0 px-10 pt-10 pb-6 sm:mx-40 md:mx-40 lg:mx-40 xl:mx-96">
       <h2 class="text-3xl font-bold text-center py-4"><%= t("defaults.edit") %></h2>
       <div class="flex flex-col border-t-2 border-customGreen1">
+        <%# Googleアカウントでのログイン中、フォームフィールドを無効化しテキストを表示 %>
         <%= form_with model:@user, url: users_profiles_path do |f| %>
           <div class="field mx-1 my-10 text-sm md:text-base">
             <%= f.label :name, User.human_attribute_name(:name) %><br>
-            <%= f.text_field :name, autocomplete: "name", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
+            <%= f.text_field :name, autocomplete: "name", disabled: @user.google_auth, class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
           <div class="field mb-10 text-sm md:text-base">
             <%= f.label :email, User.human_attribute_name(:email) %><br>
-            <%= f.email_field :email, autocomplete: "email", class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
+            <%= f.email_field :email, autocomplete: "email", disabled: @user.google_auth, class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
+
+          <% if @user.google_auth %>
+            <div class="text-center mb-5">
+              <p class="text-red-600">※ Googleアカウントでのログイン中なので、名前・メールアドレスの変更は出来ません。</p>
+            </div>
+          <% end %>
+
           <div class="flex justify-center">
             <button type="submit" class="actions text-center rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-52 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4">
               <span class="text-black"><%= t(".update") %></span>
