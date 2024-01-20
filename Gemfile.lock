@@ -116,6 +116,10 @@ GEM
     diff-lcs (1.5.0)
     dockerfile-rails (1.5.12)
       rails (>= 3.0.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     dry-configurable (1.1.0)
       dry-core (~> 1.0, < 2)
       zeitwerk (~> 2.6)
@@ -380,6 +384,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   dockerfile-rails (>= 1.5)
+  dotenv-rails
   factory_bot_rails
   importmap-rails
   jbuilder
