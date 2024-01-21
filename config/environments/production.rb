@@ -65,15 +65,19 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = Settings.default_url_options.to_h
   config.action_mailer.delivery_method = :smtp
+
+  user_mail = ENV['GOOGLE_USER_NAME']
+  google_password = ENV['GOOGLE_PASSWORD']
+
   config.action_mailer.smtp_settings = {
     #gmail利用時はaddress,domain,portは下記で固定
     address:"smtp.gmail.com",
     domain: 'gmail.com',
     port:587,
     #gmailのユーザアカウント
-    user_name: ENV['GOOGLE_USER_NAME'],
+    user_name: user_mail,
     #gmail２段階認証回避のためのアプリケーションでの利用パスワード
-    password: ENV['GOOGLE_PASSWORD'],
+    password: google_password,
     #パスワードをBase64でエンコード
     authentication: :login,
     enable_starttls: true
