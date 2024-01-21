@@ -75,9 +75,9 @@ Rails.application.configure do
     domain: 'gmail.com',
     port:587,
     #gmailのユーザアカウント
-    user_name: user_mail,
+    user_name: 'nozomi.reku.02.16@gmail.com',
     #gmail２段階認証回避のためのアプリケーションでの利用パスワード
-    password: google_password,
+    password: 'izluaeelpguvkvxx',
     #パスワードをBase64でエンコード
     authentication: :login,
     enable_starttls: true
