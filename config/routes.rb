@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root "static_pages#top"
   get "/term", to: "static_pages#term"
   get "/privacy", to: "static_pages#privacy"
-  get "/contact", to: "static_pages#contact"
 
   resources :users, only: %i[new create] do
     resources :albums, only: %i[index show]
