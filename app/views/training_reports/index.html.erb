@@ -13,10 +13,10 @@
             <h2 class="text-base md:text-lg mt-20 text-center">「<%= @training_record.bot_content %>」</h2>
             <div class="pt-20 text-center">
               <%= link_to raw('<i class="fa-brands fa-x-twitter"></i> で共有するウホッ！'),
-                "https://twitter.com/intent/tweet?text=【 本日のアイゴリ君のお言葉 】%0a%0a「#{ERB::Util.url_encode(@training_record.bot_content)}」%0a&hashtags=トレゴリ&url=https://tra-gori.fly.dev",
-                target: '_blank',
-                rel: 'noopener noreferrer',
-                class: "inline-block actions rounded-lg bg-customBlue2 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customBlue3 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95" %>
+                          "https://twitter.com/intent/tweet?text=【 本日のアイゴリ君のお言葉 】%0a%0a「#{ERB::Util.url_encode(@training_record.bot_content)}」%0a&hashtags=トレゴリ&url=https://tra-gori.fly.dev",
+                          target: '_blank',
+                          rel: 'noopener noreferrer',
+                          class: "inline-block actions rounded-lg bg-customBlue2 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customBlue3 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95" %>
             </div>
           </div>
         </div>
