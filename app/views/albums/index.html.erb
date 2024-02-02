@@ -19,17 +19,21 @@
           </div>
         </div>
       <% else %>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
-          <% @illustrations.each do |illustration| %>
-            <div class="bg-white p-6 rounded-lg shadow-xl mx-3 border border-gray-500">
-              <h1 class="text-xl md:text-2xl text-center mb-10">《 Gorilla No. <%= illustration.id %> 》</h1>
-              <%= image_tag illustration.image_url, alt: illustration.title, size: "850x850", class:"mx-auto" %>
-              <div class="pt-20 text-center">
-                <%= link_to "イラスト説明", user_album_path(id: illustration),
-                  class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
+        <div data-controller="album-modal">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+            <% @illustrations.each do |illustration| %>
+              <div class="bg-white p-6 rounded-lg shadow-xl mx-3 border border-gray-500">
+                <h1 class="text-xl md:text-2xl text-center mb-10">《 Gorilla No. <%= illustration.id %> 》</h1>
+                <%= image_tag illustration.image_url, alt: illustration.title, size: "850x850", class:"mx-auto" %>
+                <div class="pt-20 text-center">
+                  <%= link_to "イラスト説明", "#",
+                    class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4",
+                    data: { action: "click->album-modal#openModal", "illustration-id": illustration.id } %>
+                </div>
               </div>
-            </div>
-          <% end %>
+              <%= render 'show', illustration: illustration %>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </section>
