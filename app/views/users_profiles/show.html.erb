@@ -15,16 +15,16 @@
           <td class="text-sm md:text-lg border border-gray-300 py-4 text-center"><%= current_user.email %></td>
         </tr>
         <tr>
-          <th class="text-sm md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row">現在の総運動日数</th>
-          <td class="text-sm md:text-lg border border-gray-300 py-4 text-center"><%= current_user.training_records.count %>日</td>
-        </tr>
-        <tr>
           <th class="text-sm md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row">目標体重</th>
           <% if current_user.users_profile.present? %>
             <td class="text-sm md:text-lg border border-gray-300 py-4 text-center"><%= current_user.users_profile.target_weight %>kg</td>
           <% else %>
             <td class="text-sm md:text-lg border border-gray-300 py-4 text-center">未設定</td>
           <% end %>
+        </tr>
+        <tr>
+          <th class="text-sm md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row">現在の総運動日数</th>
+          <td class="text-sm md:text-lg border border-gray-300 py-4 text-center"><%= current_user.training_records.count %>日</td>
         </tr>
       </table>
       <div class="pt-10 text-center">
