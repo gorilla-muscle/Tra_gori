@@ -3,7 +3,10 @@ class UsersProfilesController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    @user = User.find(params[:id])
+    @user.build_users_profile unless @user.users_profile
+  end
 
   def update
     if @user.update(user_params)
@@ -22,6 +25,6 @@ class UsersProfilesController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, users_profile_attributes: [:id, :target_weight])
   end
 end
