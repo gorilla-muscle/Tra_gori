@@ -15,12 +15,20 @@
           <td class="text-sm md:text-lg border border-gray-300 py-4 text-center"><%= current_user.email %></td>
         </tr>
         <tr>
+          <th class="text-sm md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row">目標体重</th>
+          <% if current_user.users_profile.present? %>
+            <td class="text-sm md:text-lg border border-gray-300 py-4 text-center"><%= current_user.users_profile.target_weight %>kg</td>
+          <% else %>
+            <td class="text-sm md:text-lg border border-gray-300 py-4 text-center">未設定</td>
+          <% end %>
+        </tr>
+        <tr>
           <th class="text-sm md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row">現在の総運動日数</th>
           <td class="text-sm md:text-lg border border-gray-300 py-4 text-center"><%= current_user.training_records.count %>日</td>
         </tr>
       </table>
       <div class="pt-10 text-center">
-        <%= link_to t("defaults.edit"), edit_users_profiles_path, class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
+        <%= link_to t("defaults.edit"), edit_users_profiles_path(id: current_user), class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
       </div>
       <div class="mt-20 text-center">
         <%= link_to "ホーム画面へ戻る", training_records_path, class: "inline-block actions rounded-lg bg-gray-400 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-gray-500 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-gray-500" %>

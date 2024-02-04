@@ -3,13 +3,14 @@ class User < ApplicationRecord
   after_create :create_number_of_banana
 
   has_many :authentications, dependent: :destroy
-  accepts_nested_attributes_for :authentications
-
   has_many :training_records, dependent: :destroy
   has_many :users_illustrations, dependent: :destroy
   has_many :illustrations, through: :users_illustrations
-  has_many :users_profiles, dependent: :destroy
+  has_one :users_profile, dependent: :destroy
   has_one :number_of_banana, dependent: :destroy
+
+  accepts_nested_attributes_for :authentications
+  accepts_nested_attributes_for :users_profile
 
   validates :name, presence: true, length: { minimum: 2, maximum: 50 }
   validates :email, uniqueness: true, presence: true
