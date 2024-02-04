@@ -40,6 +40,7 @@ ja:
   users_profiles:
     edit:
       update: "更新"
+      step_number: " (小数点第一位まで入力可)"
   training_reports:
     index:
       title: "今日の報告結果"
