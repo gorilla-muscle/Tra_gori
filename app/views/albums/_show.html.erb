@@ -6,8 +6,8 @@
         style="width: 500px;"
         data-album-modal-target="albumModal"
         data-action="click->album-modal#doNothing">
-    <h2 class="text-lg md:text-xl my-10 text-center">『 <%= illustration.title %> 』</h2>
     <%= image_tag illustration.image_url, alt: illustration.title, size: "350x350", class:"mx-auto" %>
-    <h2 class="text-sm md:text-base mt-20 mb-5 text-center">「<%= illustration.description %>」</h2>
+    <h2 class="text-base md:text-lg mt-10 text-center">『 <%= illustration.title %> 』</h2>
+    <h2 class="text-base md:text-lg mt-10 mb-5 text-center">「<%= illustration.description %>」</h2>
   </div>
 </div>
