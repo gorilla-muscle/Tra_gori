@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :albums, only: %i[index show]
   end
   resource :users_profiles, only: %i[show edit update]
+  resources :weight_records, only: %i[create edit update]
   resources :password_resets, only: %i[new create edit update]
 
   get '/login', to:  'user_sessions#new'

@@ -1,0 +1,11 @@
+<%= form_with model: weight_record do |f| %>
+  <div class="field mx-1 my-10 text-sm md:text-base">
+    <%= f.label :weight, '今日の体重を記録', class: "text-base md:text-lg" %>
+    <%= f.number_field :weight, step: 0.1, min: 30.0, max: 150.0, class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5 mt-3" %>
+  </div>
+  <div class="flex justify-center">
+    <button type="submit" class="actions text-center rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-64 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1  active:scale-95 active:bg-customYellow4">
+      <span>体重を登録</span>
+    </button>
+  </div>
+<% end %>

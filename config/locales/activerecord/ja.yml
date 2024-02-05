@@ -14,6 +14,8 @@ ja:
         password_confirmation: "確認用パスワード"
       users_profile:
         target_weight: "目標体重"
+      weight_record:
+        weight: "現在の体重"
   users:
     create:
       success: "ログインしたウホッ！"
