@@ -4,20 +4,20 @@ class WeightRecordsController < ApplicationController
   def create
     @weight_record = current_user.weight_records.new(weight_params)
     if @weight_record.save
-      flash[:success] = t(".success")
+      flash[:success] = t(".save_weight")
       redirect_to users_profiles_path
     else
-      flash[:alert] = t(".alert")
+      flash[:alert] = t(".not_save_weight")
       redirect_to users_profiles_path
     end
   end
 
   def update
     if @weight_record.update(weight_params)
-      flash[:success] = t(".success")
+      flash[:success] = t(".update_weight")
       redirect_to users_profiles_path
     else
-      flash[:alert] = t(".alert")
+      flash[:alert] = t(".not_update_weight")
       render :edit, status: :unprocessable_entity
     end
   end

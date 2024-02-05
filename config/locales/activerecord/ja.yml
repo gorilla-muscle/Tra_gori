@@ -49,3 +49,10 @@ ja:
     create:
       all_acquired: "イラストをコンプリート済みウホッ！"
       shortage_banana: "バナナが不足しているウホ..."
+  weight_records:
+    create:
+      save_weight: "体重を登録したウホッ！"
+      not_save_weight: "体重の登録が出来なかったウホ..."
+    update:
+      update_weight: "体重を再登録したウホッ！"
+      not_update_weight: "体重の再登録が出来なかったウホ..."
