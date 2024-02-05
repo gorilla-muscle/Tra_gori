@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :training_records, dependent: :destroy
   has_many :users_illustrations, dependent: :destroy
   has_many :illustrations, through: :users_illustrations
+  has_many :weight_records, dependent: :destroy
   has_one :users_profile, dependent: :destroy
   has_one :number_of_banana, dependent: :destroy
 
