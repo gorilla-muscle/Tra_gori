@@ -1,13 +1,10 @@
 class UsersProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
 
-  def show
-    @latest_weight_record = current_user.weight_records.order(created_at: :desc).first
-    @weight_record = WeightRecord.new
-    @today_weight_record = WeightRecord.weight_record_for_day(current_user)
-  end
+  def show; end
 
   def edit
+    @user = User.find(params[:id])
     @user.build_users_profile unless @user.users_profile
   end
 
