@@ -47,6 +47,8 @@ gem "config"
 
 gem "dotenv-rails"
 
+gem "chartkick"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
