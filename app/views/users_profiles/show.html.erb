@@ -5,7 +5,6 @@
       <header class="text-center my-12">
         <h1 class="text-4xl"><%= t("defaults.profile") %></h1>
       </header>
-
       <table class="w-full table-auto border-collapse border border-gray-300">
         <tr>
           <th class="text-sm md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row"><%= User.human_attribute_name(:name) %></th>
@@ -14,6 +13,10 @@
         <tr>
           <th class="text-sm md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row"><%= User.human_attribute_name(:email) %></th>
           <td class="text-sm md:text-lg border border-gray-300 py-4 text-center"><%= current_user.email %></td>
+        </tr>
+        <tr>
+          <th class="text-sm md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row">総運動日数</th>
+          <td class="text-sm md:text-lg border border-gray-300 py-4 text-center"><%= current_user.training_records.count %>日</td>
         </tr>
         <tr>
           <th class="text-sm md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row"><%= UsersProfile.human_attribute_name(:target_weight) %></th>
@@ -31,16 +34,12 @@
             <td class="text-sm md:text-lg border border-gray-300 py-4 text-center">体重未入力</td>
           <% end %>
         </tr>
-        <tr>
-          <th class="text-sm md:text-lg border border-gray-300 py-4 bg-gray-100" scope="row">総運動日数</th>
-          <td class="text-sm md:text-lg border border-gray-300 py-4 text-center"><%= current_user.training_records.count %>日</td>
-        </tr>
       </table>
       <div class="pt-10 text-center">
         <%= link_to t("defaults.edit"), edit_users_profiles_path, class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
       </div>
       <hr class="mt-10 mb-5 border-t-2 border-black">
-      <div class="px-4 py-10">
+      <div class="px-4 py-5">
         <div class="text-center">
           <% if @today_weight_record %>
             <%= render 'weight_records/edit', today_weight_record: @today_weight_record %>
@@ -49,7 +48,32 @@
           <% end %>
         </div>
       </div>
-
+      <div class="border">
+        <%= line_chart @weight_records.map { |record| { record[0].strftime("%---Y年%-m月%-d日") => record[1] } }.inject({}, :merge),
+            height: "750px",
+            library: {
+              title: "体重の推移",
+              titleTextStyle: { color: '#ffffff' },
+              xtitle: "日付",
+              ytitle: "体重(kg)",
+              backgroundColor: '#183654',
+              chartArea: { backgroundColor: '#183654' },
+              vAxis: {
+                viewWindow: {
+                  min: @min_weight,
+                  max: @max_weight
+                },
+                ticks: Array.new(((@max_weight - @min_weight) / 2).to_i + 1) { |i| @min_weight + i*2 },
+                textStyle: { color: '#ffffff' }
+              },
+              hAxis: {
+                textStyle: { color: '#ffffff' }
+              },
+              series: {
+                0 => { color: '#fff629' }
+              }
+            } %>
+      </div>
       <div class="my-10 text-center">
         <%= link_to "ホーム画面へ戻る", training_records_path, class: "inline-block actions rounded-lg bg-gray-400 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-gray-500 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-gray-500" %>
       </div>
