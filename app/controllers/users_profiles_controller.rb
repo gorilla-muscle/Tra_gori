@@ -5,6 +5,9 @@ class UsersProfilesController < ApplicationController
     @latest_weight_record = current_user.weight_records.order(created_at: :desc).first
     @weight_record = WeightRecord.new
     @today_weight_record = WeightRecord.weight_record_for_day(current_user)
+    @weight_records = current_user.weight_records.order(created_at: :asc).pluck(:created_at, :weight)
+    @min_weight = weight_min(@weight_records)
+    @max_weight = weight_max(@weight_records)
   end
 
   def edit
@@ -29,5 +32,15 @@ class UsersProfilesController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, users_profile_attributes: [:id, :target_weight])
+  end
+
+  def weight_min(weight_records)
+    min_weight, max_weight = weight_records.map { |record| record[1] }.minmax
+    [ min_weight - 5, 0 ].max
+  end
+
+  def weight_max(weight_records)
+    min_weight, max_weight = weight_records.map { |record| record[1] }.minmax
+    max_weight + 5
   end
 end
