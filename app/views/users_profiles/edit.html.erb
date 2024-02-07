@@ -5,7 +5,7 @@
       <h2 class="text-3xl font-bold text-center py-4"><%= t("defaults.edit") %></h2>
       <div class="flex flex-col border-t-2 border-customGreen1">
         <%# Googleアカウントでのログイン中、フォームフィールドを無効化しテキストを表示 %>
-        <%= form_with model: @user, url: users_profiles_path do |f| %>
+        <%= form_with model: @user, url: users_profiles_path, data: { turbo: false } do |f| %>
           <div class="field mx-1 my-10 text-sm md:text-base">
             <%= f.label :name %><br>
             <%= f.text_field :name, autocomplete: "name", disabled: @user.google_auth, class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>

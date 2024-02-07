@@ -22,7 +22,7 @@
     <%= link_to user_albums_path(current_user), class: 'hover:text-blue-600 transition duration-300 hidden lg:flex lg:flex-col px-2' do %>
       <p class="text-sm"><%= t "defaults.album" %></p>
     <% end %>
-    <%= link_to users_profiles_path, class: 'hover:text-blue-600 transition duration-300 hidden lg:flex lg:flex-col px-2' do %>
+    <%= link_to users_profiles_path, data: { turbo: false }, class: 'hover:text-blue-600 transition duration-300 hidden lg:flex lg:flex-col px-2' do %>
       <p class="text-sm"><%= t "defaults.profile" %></p>
     <% end %>
     <%= link_to logout_path, data: { turbo_method: :delete, turbo_confirm: "ログアウトするウホ？" }, class: 'hover:text-blue-600 transition duration-300 hidden lg:flex lg:flex-col px-2' do %>
@@ -55,7 +55,7 @@
             <% end %>
           </li>
           <li class="hover:rounded-xl mt-4">
-            <%= link_to users_profiles_path, class: 'btn btn-ghost flex items-center mx-2' do %>
+            <%= link_to users_profiles_path, data: { turbo: false }, class: 'btn btn-ghost flex items-center mx-2' do %>
               <p class="text-sm"><%= t "defaults.profile" %></p>
             <% end %>
           </li>
