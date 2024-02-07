@@ -2,5 +2,6 @@
 import "@hotwired/turbo-rails";
 import "controllers";
 import "title_updater";
-import "chartkick"
-import "Chart.bundle"
+import "chartkick";
+import "Chart.bundle";
+import "chartkick_init";
