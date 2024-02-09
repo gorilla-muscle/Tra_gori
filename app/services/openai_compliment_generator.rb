@@ -9,11 +9,11 @@ class OpenaiComplimentGenerator
       parameters: {
         model: 'gpt-4',
         # 生成テキストの予測可能性を制御
-        temperature: 0.4,
+        temperature: 0.5,
         # 生成テキストの多様性を制御
-        top_p: 0.9,
+        top_p: 0.8,
         # 生成テキストの最大トークン数を制御
-        max_tokens: 100,
+        max_tokens: 150,
         messages: [{ role: 'user', content: prompt }],
       }
     )
