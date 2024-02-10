@@ -3,7 +3,7 @@ require 'ruby/openai'
 class OpenaiComplimentGenerator
   def self.generate_compliment(sport_content)
     client = OpenAI::Client.new
-    prompt = "私の今日の運動内容は『#{sport_content}』です。この運動に対して、ゴリラ口調で労いの言葉を90文字以内で生成してください。"
+    prompt = "私の今日の運動内容は『#{sport_content}』です。この運動に対して、語尾に「ウホ」を付けた労いの言葉を90文字以内で生成してください。"
 
     response = client.chat(
       parameters: {
