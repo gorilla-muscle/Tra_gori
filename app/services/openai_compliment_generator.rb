@@ -21,7 +21,8 @@ class OpenaiComplimentGenerator
       }
     )
 
-    if response.success?
+    # レスポンスが問題なく返ってきているかをチェック
+    if response.key?('choices') && response['choices'].any?
       response.dig('choices', 0, 'message', 'content')
     else
       handle_error(response)
@@ -33,7 +34,7 @@ class OpenaiComplimentGenerator
     when 400
       raise OpenAIError, "リクエストが不正です。入力内容を確認してください。"
     when 401
-      raise OpenAIError, "認証に失敗しました。開発元にお問い合わせ下さい。"
+      raise OpenAIError, "認証に失敗しました。管理者にお問い合わせ下さい。"
     when 403..404
       raise OpenAIError, "リクエスト先のページが存在しません。URLを確認して下さい。"
     when 408
