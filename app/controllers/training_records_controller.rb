@@ -17,9 +17,9 @@ class TrainingRecordsController < ApplicationController
           bot_content = generate_openai_compliment(@record.sport_content)
           @record.update!(bot_content: bot_content)
           current_user.number_of_banana.increment!(:count, 1)
-          redirect_to training_reports_path(record_id: @record.id)
         end
-      rescue OpenAI::Error => e
+        redirect_to training_reports_path(record_id: @record.id)
+      rescue OpenaiComplimentGenerator::OpenAIError => e
         flash[:alert] = "#{e.message}"
         redirect_to training_records_path
       rescue => e
