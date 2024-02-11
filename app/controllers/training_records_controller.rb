@@ -14,17 +14,17 @@ class TrainingRecordsController < ApplicationController
       begin
         ActiveRecord::Base.transaction do
           @record.save!
-          bot_content = generate_openai_complimet(@record.sport_content)
+          bot_content = generate_openai_compliment(@record.sport_content)
           @record.update!(bot_content: bot_content)
           current_user.number_of_banana.increment!(:count, 1)
         end
         redirect_to training_reports_path(record_id: @record.id)
-      rescue OpenAI::Error => e
-        flash[:error] = "アイゴリ君からの返事がありませんでした...: #{e.message}"
-        redirect_to root_path
+      rescue OpenaiComplimentGenerator::OpenAIError => e
+        flash[:alert] = "#{e.message}"
+        redirect_to training_records_path
       rescue => e
-        flash[:error] = "保存に失敗しました: #{e.message}"
-        redirect_to root_path
+        flash[:alert] = "保存に失敗しました。管理者にお問い合わせ下さい。 "
+        redirect_to training_records_path
       end
     end
   end
