@@ -15,7 +15,9 @@ class OauthsController < ApplicationController
     else
       begin
         # ユーザーが存在しない場合はプロバイダ情報を元に新規ユーザーを作成し、ログイン
-        signup_and_login(provider)
+        @user = create_from(provider)
+        reset_session # セキュリティ上の理由からセッションをリセット
+        auto_login(@user) # Sorceryのauto_loginメソッドでユーザーを自動ログイン
         flash[:success] = t('.login_success', provider: provider.titleize)
         redirect_to training_records_path
       rescue
