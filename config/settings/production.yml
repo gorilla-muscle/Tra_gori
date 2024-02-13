@@ -1,6 +1,6 @@
 sorcery:
   google_callback_url: 'https://tra-gori.fly.dev/oauth/callback?provider=google'
-  line_callback_url: "https://tragori.com/oauth/callback?provider=line"
+  line_callback_url: "https://tragori.fly.dev/oauth/callback?provider=line"
 default_url_options:
   protcol: 'https'
   host: 'tra-gori.fly.dev'
