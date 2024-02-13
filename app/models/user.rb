@@ -25,6 +25,10 @@ class User < ApplicationRecord
     authentications.where(provider: "google").present?
   end
 
+  def line_auth
+    authentications.where(provider: "line").present?
+  end
+
   private
 
   def create_number_of_banana
