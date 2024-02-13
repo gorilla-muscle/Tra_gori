@@ -3,7 +3,7 @@
   <div class="min-h-screen flex flex-col justify-center items-center">
     <div class="container px-10">
       <header class="text-center my-12">
-        <h1 class="text-4xl"><%= t("defaults.profile") %></h1>
+        <h1 class="text-2xl md:text-3xl"><%= t("defaults.profile") %></h1>
       </header>
       <table class="w-full table-auto border-collapse border border-gray-300">
         <tr>
@@ -39,8 +39,22 @@
         <%= link_to t("defaults.edit"), edit_users_profiles_path, class: "inline-block actions rounded-lg bg-customYellow3 py-3 px-4 mb-5 w-68 transition ease-in-out hover:bg-customYellow4 hover:drop-shadow-lg hover:-translate-y-1 active:scale-95 active:bg-customYellow4" %>
       </div>
       <hr class="mt-10 mb-5 border-t-2 border-black">
+      <div class="px-4 py-5 flex justify-center items-center">
+        <div class="text-center">
+          <header class="my-12">
+            <h1 class="text-2xl md:text-3xl">LINE通知機能</h1>
+          </header>
+          <%= link_to "https://lin.ee/UpkiOzu", target: "_blank", rel: 'noopener noreferrer' do %>
+            <%= image_tag("https://scdn.line-apps.com/n/line_add_friends/btn/ja.png", alt: "友だち追加", height: "36") %>
+          <% end %>
+        </div>
+      </div>
+      <hr class="mt-10 mb-5 border-t-2 border-black">
       <div class="px-4 py-5">
         <div class="text-center">
+          <header class="text-center my-12">
+            <h1 class="text-2xl md:text-3xl">体重管理</h1>
+          </header>
           <% if @today_weight_record %>
             <%= render 'weight_records/edit', today_weight_record: @today_weight_record %>
           <% else %>
