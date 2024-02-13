@@ -1,6 +1,6 @@
 class OauthsController < ApplicationController
   skip_before_action :require_login
-  # before_action :authenticated
+  before_action :authenticated
   
   def oauth
     #指定されたプロバイダの認証ページにユーザーをリダイレクトさせる
