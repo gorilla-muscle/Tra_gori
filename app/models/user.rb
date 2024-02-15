@@ -21,11 +21,11 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
   validates :reset_password_token, uniqueness: true, allow_nil: true
 
-  def google_auth
+  def google_check
     authentications.where(provider: "google").present?
   end
 
-  def line_auth
+  def line_check
     authentications.where(provider: "line").present?
   end
 
