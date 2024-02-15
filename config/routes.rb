@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "oauth/callback", to:  "oauths#callback"
   post "oauth/callback", to:  "oauths#callback"
   get "oauth/:provider", to:  "oauths#oauth", as: :auth_at_provider
+  delete "/delete_line", to: "oauths#delete_line", as: :delete_line
 
   resources :training_records, only: %i[index create show]
   resources :training_reports, only: %i[index show]
