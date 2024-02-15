@@ -8,11 +8,11 @@
         <%= form_with model: @user, url: users_profiles_path, data: { turbo: false } do |f| %>
           <div class="field mx-1 my-10 text-sm md:text-base">
             <%= f.label :name %><br>
-            <%= f.text_field :name, autocomplete: "name", disabled: @user.google_auth, class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
+            <%= f.text_field :name, autocomplete: "name", disabled: @user.google_check, class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
           <div class="field mb-10 text-sm md:text-base">
             <%= f.label :email %><br>
-            <%= f.email_field :email, autocomplete: "email", disabled: @user.google_auth, class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
+            <%= f.email_field :email, autocomplete: "email", disabled: @user.google_check, class: "w-full border-2 border-customGreen1 rounded-xl bg-white py-3 px-5" %>
           </div>
           <div class="field mb-10 text-sm md:text-base">
             <%= f.fields_for :users_profile do |profile_form| %>
@@ -21,7 +21,7 @@
             <% end %>
           </div>
 
-          <% if @user.google_auth %>
+          <% if @user.google_check %>
             <div class="text-center mb-5">
               <p class="text-red-600">※ Googleアカウントでのログイン中なので、名前・メールアドレスの変更は出来ません。</p>
             </div>

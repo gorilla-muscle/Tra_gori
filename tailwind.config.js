@@ -27,8 +27,8 @@ module.exports = {
         customBlue1: '#183654',
         customBlue2: '#5cd6ff',
         customBlue3: '#00a4db',
-        customBlown1: '#ffc01a',
-        customBlown2: '#c79000'
+        customgray1: '#6b7b6e',
+        customgray2: '#566158'
       }
     }
   },
