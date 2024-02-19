@@ -34,6 +34,7 @@ module TraGori
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
     
+    config.active_job.queue_adapter = :Sidekiq
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
