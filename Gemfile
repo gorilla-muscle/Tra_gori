@@ -49,6 +49,10 @@ gem "dotenv-rails"
 
 gem "chartkick"
 
+gem 'line-bot-api'
+
+gem 'whenever', require: false
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
