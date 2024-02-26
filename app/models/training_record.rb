@@ -4,10 +4,10 @@ class TrainingRecord < ApplicationRecord
 
   def self.check_report?(user)
     last_report = user.training_records.order(start_time: :desc).first
-    last_report && last_report.start_time.to_date == Date.today
+    last_report && last_report.start_time.to_date == Time.zone.today
   end
 
   def generate_openai_compliment
-    OpenaiComplimentGenerator.generate_compliment(self.sport_content)
+    OpenaiComplimentGenerator.generate_compliment(sport_content)
   end
 end

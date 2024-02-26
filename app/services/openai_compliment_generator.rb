@@ -18,7 +18,7 @@ class OpenaiComplimentGenerator
           top_p: 0.9,
           # 生成テキストの最大トークン数を制御
           max_tokens: 150,
-          messages: [{ role: 'user', content: prompt }],
+          messages: [{ role: 'user', content: prompt }]
         }
       )
       # レスポンスが問題なく返ってきているかをチェック
@@ -27,17 +27,15 @@ class OpenaiComplimentGenerator
       else
         raise OpenAIError, "予期せぬレスポンス形式です。"
       end
-    rescue Faraday::ClientError => e
-      handle_faraday_error(e)
-    rescue Faraday::ServerError => e
+    rescue Faraday::ClientError, Faraday::ServerError => e
       handle_faraday_error(e)
     rescue Faraday::Error => e
       raise OpenAIError, "通信エラーが発生しました: #{e.message}"
     end
   end
 
-  def self.handle_faraday_error(e)
-    status = e.response[:status]
+  def self.handle_faraday_error(error)
+    status = error.response[:status]
     case status
     when 400
       raise OpenAIError, "リクエストが不正です。入力内容を確認してください。"

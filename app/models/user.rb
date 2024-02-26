@@ -15,10 +15,18 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 2, maximum: 50 }
   validates :email, uniqueness: true, presence: true
-  validates :password, length: { minimum: 5 }, if: -> { new_record? || changes[:crypted_password] }
-  validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*[0-9]).{5,}\z/ }, if: -> { new_record? || changes[:crypted_password] }
-  validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
-  validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
+  validates :password,
+            length: { minimum: 5 },
+            if: -> { new_record? || changes[:crypted_password] }
+  validates :password,
+            format: { with: /\A(?=.*[a-zA-Z])(?=.*[0-9]).{5,}\z/ },
+            if: -> { new_record? || changes[:crypted_password] }
+  validates :password,
+            confirmation: true,
+            if: -> { new_record? || changes[:crypted_password] }
+  validates :password_confirmation,
+            presence: true,
+            if: -> { new_record? || changes[:crypted_password] }
   validates :reset_password_token, uniqueness: true, allow_nil: true
 
   def google_check
@@ -29,9 +37,19 @@ class User < ApplicationRecord
     authentications.where(provider: "line").present?
   end
 
+  def increment_banana_count
+    number_of_banana.count += 1
+    number_of_banana.save!
+  end
+
+  def decrement_banana_count
+    number_of_banana.count -= 5
+    number_of_banana.save
+  end
+
   private
 
   def create_number_of_banana
-    self.create_number_of_banana!
+    create_number_of_banana!
   end
 end
