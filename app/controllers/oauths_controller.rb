@@ -1,6 +1,6 @@
 class OauthsController < ApplicationController
   skip_before_action :require_login, only: %i[oauth callback]
-  
+
   # 指定されたプロバイダの外部認証ページへリダイレクト
   def oauth
     login_at(auth_params[:provider])
@@ -9,7 +9,7 @@ class OauthsController < ApplicationController
   # 認証コールバック処理
   def callback
     provider = auth_params[:provider]
-    
+
     case provider
     when "line"
       line_auth
@@ -47,12 +47,11 @@ class OauthsController < ApplicationController
   def line_cooperation
     if current_user.authentications.where(provider: "line").present?
       flash[:warning] = "既にLINE連携済みウホ"
-      redirect_to users_profiles_path
     else
       add_provider_to_user(auth_params[:provider])
       flash[:success] = "LINE連携が完了したウホ！"
-      redirect_to users_profiles_path
     end
+    redirect_to users_profiles_path
   end
 
   # Google認証処理
@@ -62,7 +61,7 @@ class OauthsController < ApplicationController
     else
       begin
         create_user_and_login(auth_params[:provider])
-      rescue => e
+      rescue StandardError => e
         flash[:alert] = "Googleログインに失敗: #{e.message}"
       end
     end

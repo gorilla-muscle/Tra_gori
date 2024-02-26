@@ -35,13 +35,13 @@ class UsersProfilesController < ApplicationController
   end
 
   def weight_min(weight_records)
-    min_weight, _ = weight_records.map { |record| record[1] }.compact.minmax
+    min_weight, = weight_records.pluck(1).compact.minmax
     min_weight = min_weight.nil? ? 0 : min_weight - 5
-    [ min_weight, 0 ].max
+    [min_weight, 0].max
   end
 
   def weight_max(weight_records)
-    _, max_weight = weight_records.map { |record| record[1] }.compact.minmax
-    max_weight = max_weight.nil? ? 0: max_weight + 5
+    _, max_weight = weight_records.pluck(1).compact.minmax
+    max_weight.nil? ? 0 : max_weight + 5
   end
 end

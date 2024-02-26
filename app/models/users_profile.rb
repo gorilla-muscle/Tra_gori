@@ -8,8 +8,7 @@ class UsersProfile < ApplicationRecord
 
   def check_decimal_point
     return if target_weight.blank?
-    unless target_weight.to_s.match?(/\A\d+(\.\d)?\z/)
-      errors.add(:target_weight, "は小数点第一位まで入力して下さい")
-    end
+
+    errors.add(:target_weight, "は小数点第一位まで入力して下さい") unless target_weight.to_s.match?(/\A\d+(\.\d)?\z/)
   end
 end
