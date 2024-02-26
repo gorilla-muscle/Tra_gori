@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :illustration do
-    title { "MyString" }
-    description { "MyText" }
-    image_url { "MyString" }
+    title { "testTitle" }
+    description { "TestText" }
+    image_url { "TestImage" }
   end
 end

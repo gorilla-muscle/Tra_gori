@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "UsersProfiles", type: :request do
+RSpec.describe "UsersProfiles" do
   describe "GET /index" do
     pending "add some examples (or delete) #{__FILE__}"
   end
