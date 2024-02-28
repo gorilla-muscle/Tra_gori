@@ -101,7 +101,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'カスタムメソッド' do
-    let(:user) { FactoryBot.create(:user) }
+    let(:user) { FactoryBot.create(:user, :with_authentications) }
 
     context 'バナナ所持数の増減関連' do
       # ユーザーのバナナ初期所持数が5本のため、初期値5でセットアップ
