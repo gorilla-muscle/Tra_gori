@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe TrainingRecord, type: :model do
-  describe 'バリデーション' do
+  describe 'バリデーションチェック' do
     let(:user) { FactoryBot.create(:user) }
 
     context '運動内容保存の成功' do
@@ -27,12 +27,12 @@ RSpec.describe TrainingRecord, type: :model do
   end
 
   describe 'アソシエーションチェック' do
-    it 'userとの関連が存在するか' do
+    it 'userとの関連が定義されているか' do
       should belong_to(:user)
     end
   end
 
-  describe 'カスタムメソッド' do
+  describe 'カスタムメソッドチェック' do
     let(:user) { FactoryBot.create(:user) }
 
     context '外部プロバイダーチェック' do
@@ -55,5 +55,4 @@ RSpec.describe TrainingRecord, type: :model do
       end
     end
   end
-
 end
