@@ -3,14 +3,14 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'バリデーションチェック' do
-    context 'ユーザー登録成功' do
+    context '有効' do
       it '必要な情報が全て入力されている場合は成功' do
         user = FactoryBot.build(:user)
         expect(user).to be_valid
       end
     end
 
-    context 'ユーザー登録失敗' do
+    context '無効' do
       it '名前が入力されていない場合は無効' do
         user = FactoryBot.build(:user, name: nil)
         expect(user).not_to be_valid
