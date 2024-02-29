@@ -116,11 +116,11 @@ RSpec.describe User, type: :model do
 
     context '外部プロバイダー関連' do
       it 'プロバイダー名"google"をチェック出来ているか' do
-        expect(user.google_check).to be true
+        expect(user.google_check).to eq true
       end
 
       it 'プロバイダー名"line"をチェック出来ているか' do
-        expect(user.line_check).to be true
+        expect(user.line_check).to eq true
       end
     end
   end
