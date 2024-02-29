@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe WeightRecord do
+RSpec.describe WeightRecord, type: :model do
   describe 'アソシエーションチェック' do
     it 'userとの関連が定義されているか' do
       should belong_to(:user)
