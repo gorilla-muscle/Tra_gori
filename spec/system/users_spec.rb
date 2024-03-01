@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :system do
-  describe 'ユーザー登録' do
-    context '入力情報が正しい場合' do
-      it 'ユーザー登録が成功すること' do
+  describe 'ユーザー登録処理' do
+    context 'フォームの入力値が正常' do
+      it '登録処理が成功すること' do
         visit new_user_path
         fill_in '名前', with: 'Test_name'
         fill_in 'メールアドレス', with: 'test@example.com'
@@ -15,8 +15,8 @@ RSpec.describe "Users", type: :system do
       end
     end
 
-    context '入力情報に誤りがある場合' do
-      it 'ユーザー登録が失敗すること' do
+    context 'フォームの入力値に誤りがある' do
+      it '登録処理が失敗すること' do
         visit new_user_path
         fill_in '名前', with: ''
         fill_in 'メールアドレス', with: ''

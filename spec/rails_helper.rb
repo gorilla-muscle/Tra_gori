@@ -65,6 +65,8 @@ RSpec.configure do |config|
 
   # モジュール名(FactoryBot)の省略
   config.include FactoryBot::Syntax::Methods
+
+  config.include LoginSupport, type: :system
 end
 
 Shoulda::Matchers.configure do |config|
