@@ -1,0 +1,5 @@
+sorcery:
+  google_callback_url: 'http://localhost:3000/oauth/callback?provider=google'
+  line_callback_url: 'https://e7cc-49-96-13-63.ngrok-free.app/oauth/callback?provider=line'
+default_url_options:
+  host: "localhost:3000"
