@@ -14,9 +14,15 @@ class TrainingRecordsController < ApplicationController
       flash[:warning] = t(".reported")
       redirect_to training_records_path
     else
-      @record = current_user.training_records.build(record_params)
-      openai_response_handling(@record)
+      @record = TrainingRecord.openai_response_handling(current_user, record_params)
+      redirect_to training_reports_path(record_id: @record.id)
     end
+  rescue OpenaiComplimentGenerator::OpenAIError => e
+    flash[:alert] = e.message
+    redirect_to training_records_path
+  rescue StandardError => e
+    flash[:alert] = e.message
+    redirect_to training_records_path
   end
 
   private
@@ -27,27 +33,5 @@ class TrainingRecordsController < ApplicationController
 
   def record_params
     params.require(:training_record).permit(:sport_content, :start_time)
-  end
-
-  def openai_response_handling(record)
-    ActiveRecord::Base.transaction do
-      acquisition_response(record)
-    end
-    redirect_to training_reports_path(record_id: record.id)
-  rescue OpenaiComplimentGenerator::OpenAIError => e
-    flash[:alert] = e.message
-    redirect_to training_records_path
-  rescue StandardError
-    flash[:alert] = "保存に失敗しました。管理者にお問い合わせ下さい。 "
-    redirect_to training_records_path
-  end
-
-  def acquisition_response(record)
-    record.save!
-    bot_content = record.generate_openai_compliment(record.sport_content)
-    # rubocop:disable Style/HashSyntax
-    record.update!(bot_content: bot_content)
-    # rubocop:enable Style/HashSyntax
-    current_user.increment_banana_count
   end
 end
