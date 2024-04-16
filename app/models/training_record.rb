@@ -7,7 +7,7 @@ class TrainingRecord < ApplicationRecord
     last_report && last_report.start_time.to_date == Time.zone.today
   end
 
-  def generate_openai_compliment
+  def generate_openai_compliment(sport_content)
     OpenaiComplimentGenerator.generate_compliment(sport_content)
   end
 end

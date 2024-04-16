@@ -44,14 +44,10 @@ class TrainingRecordsController < ApplicationController
 
   def acquisition_response(record)
     record.save!
-    bot_content = generate_openai_compliment(record.sport_content)
+    bot_content = record.generate_openai_compliment(record.sport_content)
     # rubocop:disable Style/HashSyntax
     record.update!(bot_content: bot_content)
     # rubocop:enable Style/HashSyntax
     current_user.increment_banana_count
-  end
-
-  def generate_openai_compliment(sport_content)
-    OpenaiComplimentGenerator.generate_compliment(sport_content)
   end
 end
