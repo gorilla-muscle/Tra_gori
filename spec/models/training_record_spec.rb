@@ -54,7 +54,7 @@ RSpec.describe TrainingRecord, type: :model do
       it '運動内容に基づいたメッセージが生成される' do
         training_record = FactoryBot.create(:training_record, user: user)
         allow(OpenaiComplimentGenerator).to receive(:generate_compliment).with(training_record.sport_content).and_return('良い有酸素運動ですね！')
-        expect(training_record.generate_openai_compliment(training_record.sport_content)).to eq('良い有酸素運動ですね！')
+        expect(training_record.generate_openai_compliment).to eq('良い有酸素運動ですね！')
       end
     end
 

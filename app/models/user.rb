@@ -42,6 +42,11 @@ class User < ApplicationRecord
     number_of_banana.save!
   end
 
+  def increment_banana_count_bonus
+    number_of_banana.count += 5
+    number_of_banana.save!
+  end
+
   def decrement_banana_count
     number_of_banana.count -= 5
     number_of_banana.save

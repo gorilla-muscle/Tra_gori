@@ -7,7 +7,7 @@ class TrainingRecord < ApplicationRecord
     last_report && last_report.start_time.to_date == Time.zone.today
   end
 
-  def generate_openai_compliment(sport_content)
+  def generate_openai_compliment
     OpenaiComplimentGenerator.generate_compliment(sport_content)
   end
 
@@ -15,9 +15,13 @@ class TrainingRecord < ApplicationRecord
     ActiveRecord::Base.transaction do
       record = user.training_records.build(record_params)
       record.save!
-      bot_content = record.generate_openai_compliment(record.sport_content)
+      bot_content = record.generate_openai_compliment
       record.update!(bot_content: bot_content)
-      user.increment_banana_count
+      if user.training_records.count % 5 == 0
+        user.increment_banana_count_bonus
+      else
+        user.increment_banana_count
+      end
       record
     end
   rescue OpenaiComplimentGenerator::OpenAIError => e
